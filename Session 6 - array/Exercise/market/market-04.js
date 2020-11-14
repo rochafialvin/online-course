@@ -1,5 +1,5 @@
 // ###################### //
-// MARKET V5.0
+// MARKET V4.0
 // ###################### //
 
 // [name, price, stock]
@@ -200,11 +200,15 @@ while (true) {
 
                 // Kosongkan keranjang, karena sudah dibayar
                 carts = []
+
+
                 break
             }
         }
 
+    // Jika memilih menu 5, exit
     } else {
+        // Keluar dari while 'menu utama'
         break
     }
 }

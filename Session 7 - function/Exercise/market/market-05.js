@@ -13,6 +13,20 @@ var fruits = [
 // Nantinya isi dari carts ini sebuah array dengan format [name, price, qty]
 var carts = []
 
+// Function untuk menampilkan list buah
+var showList = () => {
+    // Variable awal yang akan menyimpan list dari buah
+    var fruitList = 'Daftar buah\n\n'
+
+    fruits.forEach((fruit, i) => {
+        // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
+        fruitList += `${i}. ${fruit[0]} || Rp.${fruit[1]} || stock : ${fruit[2]}\n`
+    })
+
+    // Menampilkan daftar buah
+    alert(fruitList)
+}
+
 // While 'menu utama', akan menampilkan menu selama user belum memilih untuk keluar (pilihan 5)
 while (true) {
     var menu = parseInt(prompt(`
@@ -27,17 +41,8 @@ while (true) {
     // Jika memilih menu 1, Menampilkan daftar buah
     if(menu == 1){
 
-        // Variable awal yang akan menyimpan list dari buah
-        var fruitList = 'Daftar buah\n\n'
-
-        // Looping sebanyak buah yang ada, fruits.length = jumlah data yang ada pada array fruits
-        for (var i = 0; i < fruits.length; i++) {
-            // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
-            fruitList += `${i}. ${fruits[i][0]} || Rp.${fruits[i][1]} || stock : ${fruits[i][2]}\n`
-        }
-
-        // Menampilkan daftar buah
-        alert(fruitList)
+        // Memanggil function untuk menampilkan list buah
+        showList()
 
     // Jika memilih menu 2, Menambah buah
     } else if (menu == 2){
@@ -53,16 +58,8 @@ while (true) {
         // Array yang sudah jadi di push ke array fruits
         fruits.push(newFruit)
         
-        // Variable awal yang akan menyimpan list dari buah
-        var fruitList = 'Daftar buah\n\n'
-
-        for (var i = 0; i < fruits.length; i++) {
-            // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
-            fruitList += `${i}. ${fruits[i][0]} || Rp.${fruits[i][1]} || stock : ${fruits[i][2]}\n`
-        }
-
-        // Menampilkan daftar buah
-        alert(fruitList)
+        // Memanggil function untuk menampilkan list buah
+        showList()
     
     // Jika memilih menu 3, Menghapus buah
     } else if (menu == 3){
@@ -70,10 +67,10 @@ while (true) {
         // Variable awal yang akan menyimpan list dari buah
         var fruitList = 'Menghapus buah:\n\n'
 
-        for (var i = 0; i < fruits.length; i++) {
+        fruits.forEach((fruit, i) => {
             // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
-            fruitList += `${i}. ${fruits[i][0]} || Rp.${fruits[i][1]} || stock : ${fruits[i][2]}\n`
-        }
+            fruitList += `${i}. ${fruit[0]} || Rp.${fruit[1]} || stock : ${fruit[2]}\n`
+        })
 
         // Menampilkan daftar buah dan memilih buah untuk dihapus
         // index dari buah terpilih akan disimpan ke variable selIndex
@@ -82,16 +79,8 @@ while (true) {
         // Menghapus satu data pada array
         fruits.splice(selIndex, 1)
 
-        // Variable awal yang akan menyimpan list dari buah
-        var fruitList = 'Daftar buah\n\n'
-
-        for (var i = 0; i < fruits.length; i++) {
-            // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
-            fruitList += `${i}. ${fruits[i][0]} || Rp.${fruits[i][1]} || stock : ${fruits[i][2]}\n`
-        }
-
-        // Menampilkan daftar buah
-        alert(fruitList)
+        // Memanggil function untuk menampilkan list buah
+        showList()
 
     // Jika memilih menu 4, Membeli buah
     } else if (menu == 4){
@@ -102,10 +91,10 @@ while (true) {
             // Variable awal yang akan menyimpan list dari buah
             var fruitList = 'Membeli buah:\n\n'
 
-            for (var i = 0; i < fruits.length; i++) {
+            fruits.forEach((fruit, i) => {
                 // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable fruitlist
-                fruitList += `${i}. ${fruits[i][0]} || Rp.${fruits[i][1]} || stock : ${fruits[i][2]}\n`
-            }
+                fruitList += `${i}. ${fruit[0]} || Rp.${fruit[1]} || stock : ${fruit[2]}\n`
+            })
 
             // Menampilkan daftar buah dan memilih buah untuk dibeli
             var fruitIndex = parseInt(prompt(`${fruitList}`))
@@ -137,10 +126,10 @@ while (true) {
             // Siapkan variable untuk list buah yang ada pada keranjang
             var cartList = 'Keranjang:\n\n'
 
-            for (var i = 0; i < carts.length; i++) {
+            carts.forEach((cart, i) => {
                 // Setiap buahnya akan dibuatkan satu list dengan format tertentu dan ditambahkan ke variable cartlist
-                cartList += `${i}. ${carts[i][0]} || Rp.${carts[i][1]} || stock : ${carts[i][2]}\n`
-            }
+                cartList += `${i}. ${cart[0]} || Rp.${cart[1]} || stock : ${cart[2]}\n`
+            })
 
             var again = prompt(`${cartList}\n\nIngin belanja lainnya ? ( ya / tidak )`)
 
@@ -161,27 +150,26 @@ while (true) {
 
         // Menghitung total harga
         var finalPrice = 0
-        for(i = 0 ; i < carts.length ; i++){
 
+        carts.forEach((cart) => {
             // total price per buah
             // Price x Quantity, hasilnya dijadikan index ke 3 dari buah tersebut
-            carts[i][3] = carts[i][1] * carts[i][2]
+            cart[3] = cart[1] * cart[2]
 
             // final price kesuluhan
-            finalPrice += carts[i][3]
-
-        }
+            finalPrice += cart[3]
+        })
 
         // Menampilkan detail belanja
         var finalReport = ''
-        for(i = 0 ; i < carts.length ; i++){
 
-            // item = [name, price, qty, totalPrice]
-            var item = carts[i]
-            finalReport +=  `${item[0]} : ${item[1]} x ${item[2]} = ${item[3]}\n`
-            
-        }
+        carts.forEach((cart) => {
+             // cart = [name, price, qty, totalPrice]
+             finalReport +=  `${cart[0]} : ${cart[1]} x ${cart[2]} = ${cart[3]}\n`
+        })
 
+        // While 'input uang', dijalankan untuk meminta inputan jumlah uang dari user
+        // akan terus berulang selama uang yang dimasukkan oleh user masih kurang dari yang seharusnya
         while (true) {
             // Menampilkan informasi belanja termasuk total uang yang harus dibayar
             var money = parseInt(prompt(`Detail Belanja\n\n${finalReport}\n\nTotal : ${finalPrice}`))
@@ -192,19 +180,26 @@ while (true) {
                 alert(`Uang yang Anda masukkan masih kurang ${margin}, total belanja ${finalPrice}`)
             } else {
 
+                // Jika uang yang diberikan pas
                 if(margin == 0) {
                     alert('Terimakasih')
+
+                // Jika uang yang diberikan lebih
                 } else {
                     alert(`Terimakasih, uang kembalian Anda ${margin}`)
                 }
 
                 // Kosongkan keranjang, karena sudah dibayar
                 carts = []
+
+                // Keluar dari while 'input uang'
                 break
             }
         }
 
+    // Jika memilih menu 5, exit
     } else {
+        // Keluar dari while 'menu utama'
         break
     }
 }

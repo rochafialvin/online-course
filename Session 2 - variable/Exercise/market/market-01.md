@@ -21,3 +21,4 @@
 - Isi Detail belanja
   - qty, harga satuan , dan total harga setiap buah
   - Total harga secara keseluruhan
+  
