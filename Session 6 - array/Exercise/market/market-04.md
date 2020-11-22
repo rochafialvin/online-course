@@ -1,4 +1,4 @@
-## MARKET V5.0
+## MARKET V.1.4
 
 - Hanya boleh ada satu block while untuk input jumlah qty semua produk.
 - Gunakan for loop untuk menghitung total harga setiap barang.
@@ -24,7 +24,6 @@
 - Clue : variable fruits kini berisi array dua dimensi. Dimana isi dari array tersebut adalah array juga yang setiap arraynya akan menyimpan informasi nama buah, harga satuan buah, dan stock buah yang dimiliki.
 
 - Clue : membutuhkan satu buah array baru sebagai keranjang. Gunanya untuk menyimpan data buah yang dipilih oleh user untuk dibeli. Jika user membeli dua macam buah, maka array ini hanya akan berisi dua data saja.
-
 
 
 

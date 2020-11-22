@@ -1,4 +1,4 @@
-## MARKET V5.0
+## MARKET V.1.5
 
 - Ubah loop yang menggunakan for loop menjadi for each
     - Membuat list / daftar buah
