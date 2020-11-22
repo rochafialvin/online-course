@@ -1,4 +1,4 @@
-## MARKET V.1.6
+## MARKET V.1.6.1
 
 
 - Sekarang market tidak lagi hanya menjual buah, melainkan berbagai macam produk lainnya. Produk yang dijual kini memiliki empat jenis berbeda. Ada produk yang akan digolongkan sebagai fastfood, kemudian cloth atau pakaian, elektronik dan juga buah. Jadi total ada tiga jenis produk baru yang akan kita jual selain buah.

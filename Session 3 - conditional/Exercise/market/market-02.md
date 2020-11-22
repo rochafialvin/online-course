@@ -1,4 +1,4 @@
-## MARKET V.1.0
+## MARKET V.1.2
 
 ### Specifications :
 

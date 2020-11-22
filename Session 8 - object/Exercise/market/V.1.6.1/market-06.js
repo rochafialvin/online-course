@@ -77,15 +77,18 @@ function createList(data, title) {
                 newList += ` || WARRANTY : ${item.warranty}\n`
                 break;
         
+            // Fruits
             default:
                 newList += ` || SUGAR : ${item.sugar}\n`
                 break;
         }
 
+        // Menambahkan satu baris list
         list += newList
     
     })
 
+    // Return list yang sudah jadi
     return list
 }
 
@@ -106,9 +109,10 @@ while (true) {
         // Memanggil function untuk menampilkan list buah
         alert(createList(products, 'Daftar Produk'))
 
-    // Jika memilih menu 2, Menambah buah
+    // Jika memilih menu 2, Menambah produk
     } else if (menu == 2){
 
+        // Memilih kategori untuk produk yang ingin ditambah
         var catOpt = parseInt(
             prompt(
                 'Kategori produk yang ingin ditambahkan\n\n' +
@@ -120,9 +124,9 @@ while (true) {
         )
 
         // Input nama, harga, stock untuk buah yang baru
-        var name = prompt('Masukkan nama produk :')
-        var stock = parseInt(prompt('Masukkan jumlah stock :'))
-        var price = parseInt(prompt('Masukkan jumlah harga satuan :'))
+        let name = prompt('Masukkan nama produk :')
+        let stock = parseInt(prompt('Masukkan jumlah stock :'))
+        let price = parseInt(prompt('Masukkan jumlah harga satuan :'))
 
         var newProduct
         switch (catOpt) {
@@ -204,7 +208,8 @@ while (true) {
 
                     // Kurangi stock buah yang sudah masuk ke keranjang
                     products[selIndex].stock -= qty
-
+                
+                    // Keluar dari while 'Quantity'
                     break
                 }
             }
@@ -217,6 +222,7 @@ while (true) {
                 cartList += `${i}. ${cart.name} || Rp.${cart.price} || qty : ${cart.qty}\n`
             })
 
+            // Menentukan untuk belanja lainnya atau tidak
             var again = prompt(`${cartList}\n\nIngin belanja lainnya ? ( ya / tidak )`)
 
             // Jika menjawab tidak, keluar dari while 'memilih buah'

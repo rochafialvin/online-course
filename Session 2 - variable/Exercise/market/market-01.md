@@ -22,3 +22,24 @@
   - qty, harga satuan , dan total harga setiap buah
   - Total harga secara keseluruhan
   
+
+Introduction
+What Why When
+Syntax Function
+Without Parameter and Return Value
+Parameter
+Return
+Parameter and Return
+Parameter or Argument
+Default Parameter
+Callback Function
+Calling Other Function
+Recursive Function
+Array Method
+For Each
+Map
+Map (Duplicate)
+Filter
+Filter (Duplicate)
+Array Sort (Advanced)
+Exerices
