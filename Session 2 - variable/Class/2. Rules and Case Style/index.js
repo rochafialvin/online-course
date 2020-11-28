@@ -1,8 +1,11 @@
-// Aturan dalam membuat variabel
+// S2 - Slide 14
+
+// Rules : Aturan dalam membuat variabel
 
 // // // // // // // // // // // // /
 // 1. Tidak dapat mengandung spasi //
 // // // // // // // // // // // // /
+
 // var first name 
 // console.log(first name)
 
@@ -36,6 +39,12 @@ var totalbill, my_birthday, $cloud9
 var nextday
 
 var Nextday
+
+
+
+
+
+
 
 ////////////////
 // Case Style //

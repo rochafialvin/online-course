@@ -1,0 +1,181 @@
+<!-- Define Version of HTML, We use HTML Version 5 or we call it HTML 5 -->
+<!DOCTYPE html>
+<!-- Define what language will be used on this site, en means we use english -->
+<html lang="en">
+<!-- Head tag used for saving all tags that will used for additional information about the site, usually we will use meta tag inside head tag 
+    not to be displayed on browser but just giving information to browser itself -->
+<head>
+    <!-- Defines character set to be used  -->
+    <meta charset="UTF-8">
+    <!-- Defines viewport of the website
+    sets the width of the page to follow the screen-width of device
+    and sets initial zoom at normal    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Defines title of the page -->
+    <title>Document</title>
+</head>
+
+<!-- Body tags will be the place of all tags that defines the contents of the website  -->
+<body>
+
+    <!-- Element -->
+    <h1 style="color: blueviolet;">FRONT END 101</h1>
+    <!-- 
+        Tag : h1
+        Content : FRONT END 101
+        Attribute : style
+        Attribute Value : color:blueviolet
+    -->
+
+    <!-- Header 1 - 6 -->
+    <h1>Header One</h1>
+    <h2>Header Two</h2>
+    <h3>Header Three</h3>
+    <h4>Header Four</h4>
+    <h5>Header Five</h5>
+    <h6>Header Six</h6>
+
+    <!-- Paragraph -->
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Aut, adipisci officia. Accusamus nesciunt repellendus 
+        provident aperiam nihil quae, vel eveniet at quaerat 
+        maiores magni excepturi.
+    </p>
+
+    <!-- Text Formatting -->
+
+    <b>Bold</b>
+    <br>
+    <strong>Strong</strong>
+    <br><br>
+
+    <i>Italic</i>
+    <br>
+    <em>Emphasized</em>
+    <br><br>
+
+    <u>Underlined</u>
+    <br>
+    <ins>Inserted</ins>
+    <br><br>
+
+    <mark>Marked</mark><br>
+    Normal <small>Small</small><br>
+    <del>Deleted</del>
+    <br><br>
+
+    Normal <sub>Subscript</sub>
+    <br><br>
+
+    Normal <sup>Superscript</sup><br>
+      
+    <!-- Ordered List (urutan) -->
+    <!-- type: 1 (default), 'A', 'a', 'I', 'i' -->
+    <!-- start: nomor tertentu -->
+    <ol start='5' >
+        <li>List pertama</li>
+        <li>List kedua</li>
+        <li>List ketiga</li>
+    </ol>
+
+    <!-- Unordered List (tidak memiliki urutan) -->
+    <!-- type: disc (default), circle, square -->
+    <ul type="circle">
+        <li>List pertama</li>
+        <li>List kedua</li>
+        <li>List ketiga</li>
+    </ul>
+
+    <!-- Anchor Tag (link) -->
+
+    <!-- Absolute link -->
+    <!-- 
+        Merupakan sebuah alamat yang sifatnya 'absolute', 
+        alamat akan selalu sama , terlepas dari file mana dia diakses
+    -->
+    <!-- target blank agar membuka link di tab baru -->
+    <a href="https://www.purwadhika.com" target="_blank">Purwadhika</a>
+    <br>
+
+    <!-- Relative link -->
+    <!-- Merupakan sebuah alamat yang tergantung darimana kita mengakses -->
+    <a href="./files/about.html">About Page</a>
+    <br>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Hobby</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Jerax</td>
+            <td>Football</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Kuroky</td>
+            <td>Cook</td>
+        </tr>
+    </table>
+
+    <!-- Form -->
+    <form>
+
+        <!-- Text Box -->
+        <p>Nama <input type="text"></p>
+        <p>Email <input type="text" name="email"></p>
+
+        <!-- Radio Button -->
+        <p>
+            <input type="radio" name="gender" id="pria"> <label for="pria">Pria</label>
+            <input type="radio" name="gender" id="wanita"> <label for="wanita">Wanita</label>
+        </p>
+
+        <!-- Checkbox -->
+        <p>
+            <input type="checkbox"  id="html"><label for="html">H T M L</label>
+            <input type="checkbox"  id="css"><label for="css">C S S</label>
+        </p>
+        
+        <!-- Select -->
+
+        <!-- Group option -->
+        <!-- Mengelompokkan option dari dropdown (tag select) -->
+        <!-- 
+            Jika tidak memilik attribute value, maka yang akan diambil sebagai
+            value adalah konten yang ada didalam tag option
+        -->
+
+        <select>
+            <optgroup label="Hijau">
+                <option value="hijau tosca">Hijau Tosca</option>
+                <option value="hijau daun">Hijau Daun</option>
+            </optgroup>
+
+            <optgroup label="Merah">
+                <option value="merah muda">Merah Muda</option>
+                <option value="merah maroon">Merah Maroon</option>
+            </optgroup>
+
+            <optgroup label="Biru">
+                <option value="biru laut">Biru Laut</option>
+                <option value="biru dongker">Biru Dongker</option>
+            </optgroup>
+        </select>
+
+        <!-- Button Input -->
+        <input type="button" value="Button Input">
+
+        <!-- Button Tag -->
+        <button>Button Tag</button>
+    </form>
+     
+
+
+     <img src="image/link" alt="">
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 // Menjelaskan bagaimana cara menggunakan sebuah komentar
 
-
 // Menampilkan teks "Hello World" pada console
 console.log("Hello World")
 

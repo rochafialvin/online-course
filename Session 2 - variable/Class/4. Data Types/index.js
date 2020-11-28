@@ -1,3 +1,5 @@
+// S2 - Slide 23
+
 // Data Types
 
 // Strings
@@ -7,6 +9,8 @@ var morning = 'Good Morning'
 var oneFour = "1234"
 
 console.log(greet)
+
+// S2 - Slide 23
 
 // Numbers
 // Dibagi menjadi dua, integer dan float
@@ -19,12 +23,12 @@ var intThree = 12
 console.log(intOne)
 
 // Float, bilangan desimal
-var pointTwenyThree = 0.23
+var twenyThree = 0.23
 var pi = 3.14
 var perfect = 8.99
 // var coma = 9,9
 
-console.log(pointTwenyThree)
+console.log(twenyThree)
 
 // Boolean
 // Hanya memiliki dua nilai, true dan false

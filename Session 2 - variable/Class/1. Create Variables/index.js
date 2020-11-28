@@ -1,9 +1,11 @@
+// S2 - Slides 7
+
 // Membuat variabel tanpa memberikan data untuk disimpan
-var undfnd
-// Menampilkan data yang disimpan oleh variabel undfnd
-console.log(undfnd)
+var rain
+// Menampilkan data yang disimpan oleh variabel rain
+console.log(rain)
 
 // Membuat variabel dengan memberikan data untuk disimpan
-var name = "John"
-// Menampilkan isi data yang disimpan oleh variable name
-console.log(name)
+var sky = "Blue"
+// Menampilkan isi data yang disimpan oleh variable sky
+console.log(sky)
