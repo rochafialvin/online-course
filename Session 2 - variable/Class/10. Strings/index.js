@@ -1,6 +1,5 @@
 // S2 - Slide 48
 
-
 // Strings
 "Happy Weekend !"
 "23 is an odd number"
@@ -42,9 +41,17 @@ var fullNameSpace = firstName + " " + lastName
 // Concatinate with number
 var a = "8"
 var b = 12
+// String + Number ==> Number akan diubah oleh javascript menjadi string
+// "8" + "12" = "812"
 var c = a + b
-// "812"
-console.log(c)
+// 8 * 12 = 96
+var d = a * b
+// 8 - 12 = -4
+var e = a - b
+
+// console.log(c);
+// console.log(d);
+// console.log(e);
 
 
 // Backtick

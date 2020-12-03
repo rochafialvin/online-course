@@ -113,12 +113,3 @@ var number = 10
 number--
 // 9
 console.log(number)
-
-var guess = 8
-guess++
-guess--
-guess--
-guess--
-guess++
-// 18
-console.log(guess)
