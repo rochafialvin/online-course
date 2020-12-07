@@ -4,62 +4,115 @@
 // Akan terus mengulang statement selama condition bernilai true
 // Saat pertama dijalankan, akan menjalankan statement terlebih dahulu
 
-// do{
+do{
+
     // statement
-// }while(condition)
 
+} while (condition)
 
-// Menampilkan angka
+//////////////////////////////////
+// Menampilkan angka dengan WHILE
+//////////////////////////////////
+
 var number = 6
-while(number <= 5){
+
+while( number <= 5 ){
+
+    // Menampilkan teks dan number
     console.log(`WHILE : ${number}`);
+
     // Menjumlahkan number dengan satu
     number++
+
     // setelah baris terakhir di proses
-    // akan check condition pada while
+    // akan kembaali mengevaluasi condition pada while
+
 }
 
 console.log('\n\n')
 
+/////////////////////////////////////
+// Menampilkan angka dengan DO WHILE
+/////////////////////////////////////
+
 var number = 6
+
 do{
-    console.log(`DO WHILE : ${number}`);
+
+    // Menampilkan teks dan number
+    console.log(`WHILE : ${number}`);
+
     // Menjumlahkan number dengan satu
     number++
+
     // setelah baris terakhir di proses
-    // akan check condition pada while
-}while(number <= 5)
+    // akan kembaali mengevaluasi condition pada while
 
+} while ( number <= 5 )
 
-// Genap
+///////////////////////////
+// Menampilkan angka GENAP
+///////////////////////////
+
 var number = 0
+
 do {
-    if(number % 2 == 0){
+    // Jika hasil modulus dengan dua adalah nol
+    if( number % 2 == 0 ){
+
+        // Menampilkan teks saat condition pada if bernilai true
         console.log(`${number} adalah bilangan genap`)
+        
     }
-
+    
+    // Melakukan update / modification nilai pada variabel number
     number++
-} while (number <= 10);
 
-// Ganjil
+// Mengevaluasi condition pada while
+
+} while ( number <= 10 );
+
+///////////////////////////
+// Menampilkan angka GANJIL
+///////////////////////////
+
 var number = 0
+
 do {
-    if(number % 2 == 1){
+    
+    // Jika hasil modulus dengan dua adalah satu
+    if( number % 2 == 1 ){
+        
+        // Menampilkan teks saat condition pada if bernilai true
         console.log(`${number} adalah bilangan genap`)
+        
     }
-
+    
+    // Melakukan update / modification nilai pada variabel number
     number++
-} while (number <= 10);
+
+// Mengevaluasi condition pada while
+} while ( number <= 10 );
 
 
-// Ganjil & Genap
+////////////////////////////////////
+// Menampilkan angka GANJIL & GENAP
+///////////////////////////////////
+
 var number = 0
+
 do {
-    if(number % 2 == 1){
+
+    if( number % 2 == 1 ){
+
         console.log(`${number} adalah bilangan ganjil`)
+
     } else {
+
         console.log(`${number} adalah bilangan genap`)
+
     }
 
     number++
-} while (number <= 10);
+
+} while ( number <= 10 );

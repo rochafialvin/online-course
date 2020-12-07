@@ -1,7 +1,7 @@
 // OR Operator
 
 // “Jika keduanya bernilai false, boolean yang akan dihasilkan adalah false. Kondisi lainnya akan menghasilkan true”
-// false AND false = false, sisanya true
+// false OR false = false, sisanya true
 
 // true
 console.log(true || true)
@@ -33,6 +33,3 @@ console.log( (3 >= 4) || ( 5 == "5" ) )
 console.log( (3 >= 4) || ( 5 === "5" ) )
 
 console.log( (6 < 9) || (7 > 6 ) )
-
-
-

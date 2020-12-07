@@ -1,59 +1,54 @@
 // If Else Statement
 
-// condition : true, jalankan statement 1
-// condition : false, jalankan statement 2
-if (condition) {
+// Jika condition bernilai true, maka task 1 akan dijalankan
+// Jika condition bernilai false, maka task 2 akan dijalankan
 
-    // statement 1
-
+if(condition){
+    // task 1
 } else {
-
-    // statement 2
-
+    // task 2
 }
 
 
 // Jika kondisi hujan : kenakan payung
 // Jika kondisi tidak hujan : kenakan jaket
-var rain = true
+var rain = false
 
-if (rain) {
+if(rain){
     // Jika rain : true
-    console.log("Kenakan Jas Hujan");
-
+    console.log(`Rain : ${rain}`);
+    console.log("Kenakan jas hujan");
 } else {
     // Jika rain : false
-    console.log("Kenakan Jaket");
-
+    console.log(`Rain : ${rain}`);
+    console.log("Kenakan jaket");
 }
 
-
-// Jika tidak bersalah :  dibebaskan
+// Jika tidak bersalah : dibebaskan
 // Jika bersalah : dihukum
 var guilty = false
 
 // !false ==> true
-if (!guilty) {
+if(!guilty){
     // Jika guilty : false
+    console.log(`Guilty ${guilty}`);
     console.log("Anda dibebaskan");
-
 } else {
     // Jika guilty : true
-    console.log("Anda Dihukum");
+    console.log(`Guilty ${guilty}`);
+    console.log("Anda dihukum");
 }
 
+// Jika sudah mencapai 18 : Diizinkan
+// Jika belum mencapai 18 : Ditolak
+var age = 15
 
-
-// Jika umur sudah sampai 18 atau lebih : dapat membuat SIM
-// Jika umur belum sampai 18 : ditolak
-var age = 17
-
-if (age >= 18){
+if(age >= 18){
     // Jika age > 18 atau age == 18 (18 ke atas)
-    console.log("Permohonan diterima, silahkan lanjutkan ke proses berikutnya");
-
+    console.log(`Age : ${age}`);
+    console.log("Permohonan diterima");
 } else {
     // Jika age < 18
-    console.log("Permohonan ditolak, umur belum mencapai batas minimal");
-
+    console.log(`Age : ${age}`);
+    console.log("Permohonan ditolak");
 }

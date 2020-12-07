@@ -5,12 +5,16 @@
 /////////////////////////////////
 
 var stars = ''
+
+// Loop sebanyak lima kali
 for(var i = 0; i < 5; i++){
-    // Menambahkan spasi dan bintang
+
+    // Menambahkan bintang
     stars += ' * '
 
 }
 
+// Menampilkan hasilnya pada terminal 
 console.log(stars);
 
 ////////////////////////
@@ -19,9 +23,11 @@ console.log(stars);
 
 var stars = ''
 
+// Loop sebanyak lima kali
 for(var i = 0; i < 5; i++){
 
     // Menambahkan bintang lalu enter
-    stars += '*' + '\n'
+    stars += ' * ' + '\n'
 }
+
 console.log(stars)

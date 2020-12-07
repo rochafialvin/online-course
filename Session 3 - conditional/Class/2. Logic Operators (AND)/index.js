@@ -1,6 +1,6 @@
 // AND Operator
 
-// “Jika keduanya bernilai true, boolean yang akan dihasilkan adalah true. Kondisi lainnya akan menghasilkan false” 
+// “Jika keduanya bernilai true, boolean yang akan dihasilkan adalah true. Kondisi lainnya akan menghasilkan false”
 // True AND True = True, sisanya False
 
 // True
@@ -9,9 +9,6 @@ console.log(true && true)
 console.log(true && false)
 // False
 console.log(false && false)
-
-// Install bracket pair extension
-// Menunjukan extension apa saja yang digunakan
 
 // True && True : True
 console.log( (6 < 9) && (7 > 6 ) )

@@ -1,33 +1,26 @@
-// NOT Operator
+// Operator Logika
+// NOT
 
-// Mengubah nilai boolean yang ada menjadi sebaliknya
+// Membalikkan nilai yang ada didepannya
 
-// false
-console.log(!true)
 // true
-console.log(!false)
+// console.log(!false);
+// false
+// console.log(!true);
 
-// true or !true ==> true or false : true
+// true || false : true
 console.log( (6 < 9) || !(7 > 6 ) )
-// !false and true ==> true and true : true
+// true && true : true
 console.log( !(3 >= 4) && ( 5 == "5" ) )
-// false or false = false
+// false || false : false
 console.log( (3 >= 4) || ( 5 === "5" ) )
-// !true and !true ==> false and false : false
+// false && false : false
 console.log( !(6 < 9) && !(7 > 6 ) )
-// !( true or !true ) ==> !( true or false ) ==> !true : false
+// false || false : false
 console.log( !( (6 < 9) || !(7 > 6) ) )
-
-
-
-
-
-console.log( (6 < 9) || !(7 > 6 ) )
-
-console.log( !(3 >= 4) && ( 5 == "5" ) )
-
-console.log( (3 >= 4) || ( 5 === "5" ) )
-
-console.log( !(6 < 9) && !(7 > 6 ) )
-
-console.log( !( (6 < 9) || !(7 > 6) ) )
+// true || false && true && !false
+// true && true && !false
+// true && !false
+// true && true
+// true
+console.log((3 == "3") || (7 >= 8) && (5 > 4) && !(5 === "5"));
