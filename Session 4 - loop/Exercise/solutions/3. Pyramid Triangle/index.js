@@ -37,7 +37,7 @@
 
 
 var stars = ''
-var rows = 10
+var rows = 7
 
 // Loop i untuk membuat baris
 // loop sebanyak nilai yang disimpan didalam "rows"

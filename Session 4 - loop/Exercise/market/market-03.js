@@ -1,15 +1,18 @@
-// ################ //
-// MARKET V3.0
-// ################ //
+///////////////
+// MARKET V.1.3
+///////////////
 
+// Menentukan harga setiap buah
 var priceApple = 10000
 var priceGrape = 15000
 var priceOrange = 20000
 
+// Menentukan stock setiap buah
 var stockApple = 5
 var stockGrape = 7
 var stockOrange = 8
 
+// Loop produk apel
 while(true){
     // Input jumlah apel yang akan dibeli
     var qtyApple = parseInt(prompt(`Masukkan jumlah Apel, Stock : ${stockApple}`))
@@ -24,6 +27,7 @@ while(true){
     }
 }
 
+// Loop produk anggur
 while(true){
     // Input jumlah anggur yang akan dibeli
     var qtyGrape = parseInt(prompt(`Masukkan jumlah Anggur, Stock : ${stockGrape}`))
@@ -38,6 +42,7 @@ while(true){
     }
 }
 
+// Loop produk jeruk
 do {
     // Input jumlah orange yang akan dibeli
     var qtyOrange = parseInt(prompt(`Masukkan jumlah Orange, Stock : ${stockOrange}`))
@@ -53,21 +58,23 @@ do {
 
 } while (true);
 
-
+// Mendapatkan harga total per buah
 var totalPriceApple = qtyApple * priceApple
 var totalPriceGrape = qtyGrape * priceGrape
 var totalPriceOrange = qtyOrange * priceOrange
 
+// Total harga untuk keseluruhan buah
 var finalPrice = totalPriceApple + totalPriceGrape + totalPriceOrange
 
+// Loop input uang
 while (true) {
     // Meminta input user untuk uang yang harus dibayar
     var money = parseInt(prompt(`
         Detail Belanja
 
-        Apple : ${qtyApple} x ${priceApple} = ${totalPriceApple} 
-        Grape : ${qtyGrape} x ${priceGrape} = ${totalPriceGrape} 
-        Orange : ${qtyOrange} x ${priceOrange} = ${totalPriceOrange} 
+        Apple : ${qtyApple} x ${priceApple} = ${totalPriceApple}
+        Grape : ${qtyGrape} x ${priceGrape} = ${totalPriceGrape}
+        Orange : ${qtyOrange} x ${priceOrange} = ${totalPriceOrange}
         Total : ${finalPrice}
 
         Masukkan uang Anda
@@ -83,7 +90,7 @@ while (true) {
 
     // Jika uang yang diberikan tidak kurang dari seharusnya
     } else if(money >= finalPrice){
-        
+
         if(money > finalPrice){
             // Jika uang yang diberikan lebih dari seharusnya
             alert(`Terimakasih, Uang kembali untuk Anda : ${margin}`)
@@ -93,6 +100,5 @@ while (true) {
         }
 
         break
-    } 
+    }
 }
-

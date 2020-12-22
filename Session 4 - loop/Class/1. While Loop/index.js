@@ -1,20 +1,53 @@
-/////////////
-// While Loop
-/////////////
-
-// Akan terus mengulang statement selama condition bernilai true
-// Saat dijalankan, akan memerika condition terlebih dahulu
-
-while(condition){
-
-    // statement
-
-}
+//////////////
+// WHILE LOOP
+//////////////
 
 
-/////////////////////
-// Menampilkan angka
-/////////////////////
+/*
+    Aturan Utama
+
+    Diterapkan ke segala jenis loop : While , Do While, For
+    Selama "condition" bernilai "true". maka "statement" yang ada pada loop akan diproses ulang
+*/
+
+
+/*
+    Syntax While Loop
+
+    while(condition){
+
+        statement
+
+    }
+
+*/
+
+
+/*
+    Alur Proses
+
+    Alur A
+        While
+        For
+
+    Alur B
+        Do While
+*/
+
+///////////////////////////
+// Menampilkan angka 1 - 5
+///////////////////////////
+
+/*
+    Alur Proses While Loop
+
+    1. Kita akan membuat variabel yang digunakan sebagai acuan loop (init)
+    2. Mengevaluasi condition.  (condition)
+        2.1 Jika condition bernilai "true" maka akan menjalankan statement (step 3)
+        2.2 Jika false akan keluar dari block kode while loop
+    3. Menyelesaikan statement yang ada di dalam kurung kurawal, dimana didalamnya juga akan terdapat proses perubahan nilai untuk variabel yang menjadi acuan tadi (number) (modification)
+
+*/
 
 var number = 0
 // Melakukan evaluasi condition while
@@ -49,27 +82,31 @@ while(number <= 5){
     // Kembali mengevaluasi condition
 }
 // Dijalankan setelah keluar dari loop
-console.log('Selesai LOOP');
-
+console.log('Selesai ');
 
 ///////////////////////////
 // Menampilkan nilai GENAP
 ///////////////////////////
-var number = 1
 
+// init
+var number = 1
+// condition
 while( number <= 10 ){
 
-    // Jika hasil dari modulus dua adalah nol
+    // Evaluasi nilai, apakah merupakan bilangan genap atau bukan
+    // Jika setelah dimoudulus 2 menghasilkan 0 maka nilai tsb termasuk bil GENAP
     if(number % 2 == 0 ){
         // Menampilkan informasi pada terminal / console
         console.log(`${number} adalah bilangan genap`)
     }
+
+    // modification
     // Menjumlahkan number dengan satu
     number++
 }
 
 // Dijalankan setelah keluar dari loop
-console.log('Selesai LOOP');
+console.log('Selesai ');
 
 
 
@@ -77,42 +114,49 @@ console.log('Selesai LOOP');
 ///////////////////////////
 // Menampilkan angka GANJIL
 ///////////////////////////
+
+// init
 var number = 1
+// condition
 while(number <= 10){
 
-    // Jika hasil dari modulus dua adalah satu
+    // Evaluasi nilai, apakah merupakan bilangan ganjil atau bukan
+    // Jika setelah dimoudulus 2 menghasilkan 1 maka nilai tsb termasuk bil GANJIL
     if(number % 2 == 1 ){
         // Menampilkan informasi pada terminal / console
         console.log(`${number} adalah bilangan ganjil`)
     }
+
+    // modification
     // Menjumlahkan number dengan satu
     number++
 }
 
 // Dijalankan setelah keluar dari loop
-console.log('Selesai LOOP');
+console.log('Selesai');
 
 
+/////////////////////////////////////
+// Menampilkan nilai GANJIL dan GENAP
+/////////////////////////////////////
 
-
-////////////////////////////////////
-// Menampilkan angka GANJIL & GENAP
-///////////////////////////////////
+// init
 var number = 1
-while(number <= 10){
+// condition
+while(number <= 5){
 
-    // Jika hasil dari modulus dua adalah nol
-    if(number % 2 == 0 ){
-        // Menampilkan informasi pada terminal / console
-        console.log(`${number} adalah bilangan genap`)
-    // Jika hasil dari modulus dua adalah satu
+    // statement
+    // Evaluasi nilai, apakah "number" merupakan bil ganjil ?
+    if(number % 2 == 1){
+        console.log(`${number} adalah bilangan ganjil`)
     } else {
-        // Menampilkan informasi pada terminal / console
         console.log(`${number} adalah bilangan genap`)
     }
-    // Menjumlahkan number dengan satu
-    number++
+
+    // modification
+    number ++
 
 }
+
 // Dijalankan setelah keluar dari loop
-console.log('Selesai LOOP');
+console.log('Selesai');

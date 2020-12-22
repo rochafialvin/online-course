@@ -1,13 +1,15 @@
-// Horizontal
+/////////////////////
+// Drawing Horizontal
+/////////////////////
 
-//////////////////////////////////////////////////////
-// Mempraktikkan menjumlahkan data baru pada variabel
-//////////////////////////////////////////////////////
+//////////////////////////////////////
+// Menjumlahkan 0 + 1 + 2 + 3 + 4 + 5
+/////////////////////////////////////
 
-// Number berisi string kosong
-var number = ''
-// Setup loop untuk 5 kali puataran
-for(var i = 0; i < 5; i++){
+// Membuat variabel number yg menyimpan nol
+var number = 0
+// Setup loop untuk 5 kali putaran
+for(var i = 1; i <= 5; i++){
     // Setiap loop akan menjumlahkan nilai number sebelumnya dengan nilai i
     number += i
 
@@ -19,12 +21,15 @@ console.log(number);
 // Membuat Horizontal
 /////////////////////
 
+// '*****'
+// ' *  *  *  *  * '
+
 // Looping sebanyak lima kali, dan setiap looping menambah satu bintang
 // Menyiapkan variabel yang akan menyimpan hasil akhir
 var stars = ''
-// Set-up for loop untuk dapat melakukan 5 kali loop
+// Setup for loop untuk dapat melakukan 5 kali loop
 for(var i = 0; i < 5; i++){
-    // Setiap loop akan menjumlahkan nilai "stars" sebelumnya dengan nilai satu bintang
+    // Menambahkan satu bintang untuk setiap kali loop
     stars += ' * '
 
 }

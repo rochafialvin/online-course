@@ -1,24 +1,25 @@
 // Odd Even
 
-// Meminta input user dan merubahnya menjadi integer
-var number = parseInt(prompt("Masukkan Angka"))
+// 1. Meminta input angka user dan mengubahnya menjadi integer
+var numberInp = parseInt(prompt("Masukkan angka"))
+
+// 2. Mengevaluasi nilai tersebut apakah merupakan bilangan ganjil atau genap
+
 // Variabel status untuk menyimpan keterangan ganjil / genap
 var status
 
-// Jika dimodulus 2 menghasilkan nol
-if(number % 2 == 0){
+if(numberInp % 2 == 0){
+    // Jika numberInp menghasilkan nol setelah dimodulus dua
     status = "GENAP"
 
-// Jika dimodulus 2 menghasilkan satu
 } else {
+    // Jika numberInp menghasillkan satu setelah dimodulus dua
     status = "GANJIL"
 
 }
 
-var info = `Angka ${number} tergolong bilangan ${status}`
-
-// Tampilkan informasi menggunakan alert
+// 3. Menampilkan informasi mengenai bilangan tersebut menggunakan alert dan console
+// Membuat template string untuk digunakan pada alert maupun console
+var info = `Angka ${numberInp} tergolong bilangan ${status}`
 alert(info)
-
-// Tampilkan informasi menggunakan console.log
 console.log(info)

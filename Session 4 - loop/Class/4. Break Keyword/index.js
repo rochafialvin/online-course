@@ -11,6 +11,7 @@ for (var i = 1 ; i <= 5 ; i++){
         break;
     }
 
+    // Menampilkan nilai i
     console.log(`i : ${i} `)
 
 }

@@ -1,87 +1,90 @@
-// ################# //
-// MARKET V2.0
-// ################# //
+/////////////////
+// MARKET V.1.2
+////////////////
 
+// 1. Stock untuk setiap produk
+// 2. Ketika user akan input qty melebihi stock. Nilai stock ini yang akan disimpan sebagai qty
+// 3. Saat menampilkan informasi total yang harus dibayar. Kita akan meminta user untuk input sejumlah uang
+//      3.1 Jika uang yang di input kurang dari seharusnya : Transaksi dibatalkan, Uang yang Anda masukan kurang ...
+//      3.2 Jika uang yang di input sama jumlahnya dengan yang seharusnya : Terimakasih !
+//      3.3 Jika uang yang di input melebihi dari jumlah yang seharusnya : Terimakasih, Uang kembali untuk Anda ...
+
+
+// Tentukan harga satuan untuk setiap buah
 var priceApple = 10000
 var priceGrape = 15000
 var priceOrange = 20000
 
+// Stock
 var stockApple = 5
 var stockGrape = 7
 var stockOrange = 8
 
-// Meminta input jumlah quantity
-var qtyApple = parseInt(prompt(`Masukkan jumlah Apel, Stock : ${stockApple}`))
-// Memeriksa apakan inputan user melebihi stock yang ada
+// Meminta user input qty untuk setiap buahnya
+var qtyApple = parseInt(prompt(`Masukkan jumlah qty Apel, Stock : ${stockApple}`))
+// Jika qty apel yang diminta melebih stock apel yang ada
 if(qtyApple > stockApple){
-    // Infokan kepada user jika ada kesalahan
-    alert(`Permintaan melebihi stock, qty akan terisi sesuai jumlah stock yaitu ${stockApple})`)
-    // Jika terjadi kesalahan input, maka stock akan di set menjadi nol
+    // Menampilkan informasi bahwa qty melebihi stock.
+    alert(`Permintaan qty melebihi stock, qty akan terisi sesuai jumlah stock yaitu : ${stockApple}`)
+    // Menyimpan stock apel sebagai qty yang dipesan.
     qtyApple = stockApple
 }
 
-// Meminta input jumlah quantity
-var qtyGrape = parseInt(prompt(`Masukkan jumlah Anggur, Stock : ${stockGrape}`))
-// Memeriksa apakan inputan user melebihi stock yang ada
+
+var qtyGrape = parseInt(prompt(`Masukkan jumlah qty Anggur, Stock : ${stockGrape}`))
+// Jika qty anggur yang diminta melebih stock anggur yang ada
 if(qtyGrape > stockGrape){
-    // Permintaan user melebihi stock, qty akan terisi sesuai jumlah stock
-    alert(`Permintaan melebihi stock, qty akan terisi sesuai jumlah stock yaitu ${stockGrape})`)
-    // Jika terjadi kesalahan input, maka stock akan di set menjadi nol
+    // Menampilkan informasi bahwa qty melebihi stock.
+    alert(`Permintaan qty melebihi stock, qty akan terisi sesuai jumlah stock yaitu : ${stockGrape}`)
+    // Menyimpan stock apel sebagai qty yang dipesan.
     qtyGrape = stockGrape
 }
 
-// Meminta input jumlah quantity
-var qtyOrange = parseInt(prompt(`Masukkan jumlah Apel, Stock : ${stockOrange}`))
-// Memeriksa apakan inputan user melebihi stock yang ada
+var qtyOrange = parseInt(prompt(`Masukkan jumlah qty Jeruk, Stock : ${stockOrange}`))
+// Jika qty jeruk yang diminta melebih stock jeruk yang ada
 if(qtyOrange > stockOrange){
-    // Infokan kepada user jika ada kesalahan
-    alert(`Permintaan melebihi stock, qty akan terisi dari jumlah stock yaitu ${stockOrange})`)
-    // Jika terjadi kesalahan input, maka stock akan di set menjadi nol
+    // Menampilkan informasi bahwa qty melebihi stock.
+    alert(`Permintaan qty melebihi stock, qty akan terisi sesuai jumlah stock yaitu : ${stockOrange}`)
+    // Menyimpan stock apel sebagai qty yang dipesan.
     qtyOrange = stockOrange
 }
 
+// Hitung harga total masing - masing buah
+var totalApple = qtyApple * priceApple
+var totalGrape = qtyGrape * priceGrape
+var totalOrange = qtyOrange * priceOrange
 
+// Total keseluruhan
+var finalPrice = totalApple + totalGrape + totalOrange
 
-// Hitung total biaya dari setiap buah yang dibeli
-var totalPriceApple = qtyApple * priceApple
-var totalPriceGrape = qtyGrape * priceGrape
-var totalPriceGrape = qtyOrange * priceOrange
+// Memunculkan informasi menggunakan prompt sekaligus meminta user menginput sejumlah nominal
+var money = parseInt(
+    prompt(`
+        Detail Belanja
 
-// Hitung total biaya dari keseluruhan belanjaan buah
-var finalPrice = totalPriceApple + totalPriceGrape + totalPriceGrape
+        Apel : ${qtyApple} x ${priceApple} = ${totalApple}
+        Anggur : ${qtyGrape} x ${priceGrape} = ${totalGrape}
+        Jeruk : ${qtyOrange} x ${priceOrange} = ${totalOrange}
 
-// Meminta input user untuk uang yang harus dibayar
-var money = parseInt(prompt(`
-    Detail Belanja
+        Total : ${finalPrice}
+    `)
+)
 
-    Apple : ${qtyApple} x ${priceApple} = ${totalPriceApple} 
-    Grape : ${qtyGrape} x ${priceGrape} = ${totalPriceGrape} 
-    Orange : ${qtyOrange} x ${priceOrange} = ${totalPriceOrange} 
-    Total : ${finalPrice}
-
-    Masukkan uang Anda
-`))
-
-// Hitung kemungkinan selisih antara uang dari user dengan total yang harus dibayar
+// Mencari margin antara total yang harus dibayar dengan input dari user
+// Jika uangnya kurang, maka margin akan bernilai negatif
+// Jika uangnya pas, margin akan bernilai nol
 var margin = Math.abs(money - finalPrice)
 
-// Jika uang yang diberikan kurang dari seharusnya
 if(money < finalPrice){
+    // Jika uangnya kurang, maka margin akan bernilai negatif
+    alert(`Transaksi dibatalkan, Uang yang anda masukkan kurang ${margin}`)
 
-    alert(`Transaksi dibatalkan, Uang yang Anda masukkan kurang ${margin}`)
+} else if(money > finalPrice){
+    // Jika uangnya lebih, margin akan bernilai lebih dari nol
+    alert(`Terimakasih, Uang kembali untuk Anda ${margin}`)
 
-// Jika uang yang diberikan lebih dari seharusnya
-} else if(money > finalPrice){        
-
-    alert(`Terimakasih, Uang kembali untuk Anda : ${margin}`)
-
-// Jika uang yang diberikan memiliki jumlah yang pas dari seharusnya
 } else {
-
-    alert('Terimakasih !')
+    // Jika uangnya pas, margin akan bernilai nol
+    alert(`Terimakasih !`)
 
 }
-
-
-
-

@@ -4,7 +4,7 @@
 var falResult = Boolean(0)
 console.log(falResult)
 
-// String kosong 
+// String kosong
 console.log(Boolean(""))
 // Null
 console.log(Boolean(null))
@@ -29,3 +29,13 @@ console.log(Boolean(" "));
 console.log(Boolean(["sunday", "tuesday"]));
 // Array kosong
 console.log(Boolean([]));
+
+
+// Conditional statement with falsy or truthy values
+var value = -23.345
+
+if(value){
+    console.log(`${value} adalah : Truthy Value`);
+} else {
+    console.log(`${value} adalah : Falsy Value`);
+}
