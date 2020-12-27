@@ -4,31 +4,27 @@
 
 
 /*
-    Aturan Utama
+    Alur Proses While Loop (Condition first)
 
-    Akan memproses ulang "statement" selama "condition" bernilai "true"
-*/
-
-/*
-    Alur Proses While Loop
-
-    1. Kita akan membuat variabel yang digunakan sebagai acuan loop (init)
-    2. Mengevaluasi condition.  (condition)
-        2.1 Jika condition bernilai "true" maka akan menjalankan statement (step 3)
-        2.2 Jika false akan keluar dari block kode while loop
-    3. Menyelesaikan statement yang ada di dalam kurung kurawal, dimana didalamnya juga akan terdapat proses perubahan nilai untuk variabel yang menjadi acuan tadi (number) (modification)
+    1. Membuat variabel dengan nilai awal, digunakan sebagai acuan loop (init)
+    2. Mengevaluasi condition (condition)
+        a. condition : true, lanjut ke langkah 3
+        b. condition : false, keluar dari block loop
+    3. Menyelesaikan task
+    4. Menjalankan modification
+    5. Kembali ke langkah 2
 
 */
 
 /*
-    Alur Proses
+    Alur Proses DO WHILE (task first)
 
-    1. Membuat variabel untuk acuan loop (init)
-    2. Langsung menjalankan "statement" didalam kurung kurawal, dimana juga terdapat "modification"
-    3. Evaluasi "condition"
-        3.1 Jika condition bernilai true, maka block kode pada kurung kurawal dijalankan
-        3.2 Jika condition bernilai false, maka akan keluar dari block do while
-
+    1. Membuat variabel dengan nilai awal, digunakan sebagai acuan loop (init)
+    2. Menyelesaikan task
+    3. Menjalankan modification
+    4. Mengevaluasi condition (condition)
+        a. condition : true, lanjut ke langkah 2
+        b. condition : false, keluar dari block loop
 
 */
 
@@ -44,25 +40,6 @@
 
 */
 
-//////////////////////////////////
-// Menampilkan angka dengan WHILE
-//////////////////////////////////
-
-// init
-var number = 6
-// condition
-while( number <= 5 ){
-
-    // Menampilkan nilai "number"
-    console.log(`WHILE : ${number}`);
-
-    // Menjumlahkan number dengan satu nilai (modification)
-    number++
-
-    // Selanjutnya kembali melakukan evaluasi condition pada while
-}
-
-console.log('Selesai WHILE\n\n');
 
 /////////////////////////////////////
 // Menampilkan angka dengan DO WHILE
@@ -152,3 +129,41 @@ do {
 
 // Selanjutnya melakukan evaluasi condition pada while (condition)
 } while ( number <= 10 );
+
+
+
+//////////////////////////////////////
+// Infinite Loop (Loop tak terhingga)
+//////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Infinite loop ini akan terjadi karena nilai pada variabel number selalu lebih kecil dari pada 5
+// Nilai pada variabel number akan selalu 1 karena tidak ada proses modification.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Init
+var number = 1
+
+do {
+    // task
+    console.log(`${number}`)
+
+    // condition
+} while (number <= 5)
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Infinite loop ini akan terjadi karena nilai pada variabel number selalu lebih besar atau sama dengan 5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// init
+var number = 7
+
+do {
+    // task
+    console.log(`${number}`)
+    // modification
+    number++
+
+    // condition
+} while (number >= 5)

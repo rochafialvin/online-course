@@ -5,11 +5,13 @@
 /*
     Alur Proses For Loop
 
-    1. Kita akan membuat variabel yang digunakan sebagai acuan loop (init)
-    2. Mengevaluasi condition.  (condition)
-        2.1 Jika condition bernilai "true" maka akan menjalankan statement (step 3)
-        2.2 Jika false akan keluar dari block kode while loop
-    3. Menyelesaikan statement yang ada di dalam kurung kurawal, dimana didalamnya juga akan terdapat proses perubahan nilai untuk variabel yang menjadi acuan tadi (number) (modification)
+    1. Membuat variabel dengan nilai awal, digunakan sebagai acuan loop (init)
+    2. Mengevaluasi condition (condition)
+        a. condition : true, lanjut ke langkah 3
+        b. condition : false, keluar dari block loop
+    3. Menyelesaikan task
+    4. Menjalankan modification
+    5. Kembali ke langkah 2
 
 */
 
@@ -50,6 +52,13 @@ for(var number = 0 ; number <= 5 ; number++){
 ///////////////////////////
 // Menampilkan angka 1 - 5
 //////////////////////////
+
+// Menjalankan init
+// Condition
+//      True ==> Task
+//      False ==> Keluar dari loop
+// Task
+// Modification ==> Condition
 
 // init, condition, modification
 for(var i = 1 ; i <= 5; i++){
@@ -119,14 +128,3 @@ for(var i = 1 ; i <= 5; i++){
 
 // Dijalankan setelah keluar dari loop
 console.log('Selesai LOOP');
-
-
-// WHILE TEMPLATE
-var number = 0
-
-while (number <= 5) {
-    console.log(`While loop : ${number}`)
-
-    number++
-
-}

@@ -1,5 +1,5 @@
 // Jika kita ingin mencari nilai yang dapat dibagi oleh dua angka tertentu, maka bagilah dengan angka hasil perkalian dari dua nilai tersebut.
-// FizzBuzz akan dimunculkan ketika suatu angka dapat dibagi oleh 3 dan 5. Berarti FizzBuzz akan muncul saat dapat dibagi 15 dan tidak memiliki sisa. (angka % 15 == 0)
+// FizzBuzz akan dimunculkan ketika suatu angka dapat dibagi oleh 3 dan 5. Berarti FizzBuzz akan muncul saat dapat dibagi 15 (tanpa sisa)
 
 var number = 15
 

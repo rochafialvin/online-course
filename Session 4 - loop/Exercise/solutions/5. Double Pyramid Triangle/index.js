@@ -13,7 +13,7 @@ for (var i = 1 ; i <= rows ; i++){
     }
     
     // Loop untuk menambahkan bintang ("*")
-    // Jumlah spasi yang ditambahkan didapatkan dengan rumus (((i - 1) * 2) + 1)
+    // Jumlah bintang yang ditambahkan didapatkan dengan rumus (((i - 1) * 2) + 1)
     for(var k = 1 ; k <= (((i - 1) * 2) + 1) ; k++) {
         stars += ' * '
     }

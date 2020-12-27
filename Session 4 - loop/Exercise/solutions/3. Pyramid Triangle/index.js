@@ -8,11 +8,11 @@
 //     *  *  *  *  *  *  * 
 //  *  *  *  *  *  *  *  *  * 
 
-//  s  s  s  s  * 
-//  s  s  s  *  *  * 
-//  s  s  *  *  *  *  * 
-//  s  *  *  *  *  *  *  * 
-//  *  *  *  *  *  *  *  *  *  
+// 1. s  s  s  s  * 
+// 2. s  s  s  *  *  * 
+// 3. s  s  *  *  *  *  * 
+// 4. s  *  *  *  *  *  *  * 
+// 5. *  *  *  *  *  *  *  *  *  
 
 // rows                 : 5
 // posisi baris ( i )   : 1 2 3 4 5
@@ -20,7 +20,7 @@
 // jumlah bintang ( k ) : 1 3 5 7 9 ((i - 1) * 2 + 1)
 
 
-// rows                 : 5
+// rows: 5
 // ( i ) ( form ) ( * )
 //   1    0 1 0     1
 //   2    1 1 1     3
@@ -52,7 +52,7 @@ for (var i = 1 ; i <= rows ; i++){
     }
     
     // Loop untuk menambahkan bintang ("*")
-    // Jumlah spasi yang ditambahkan didapatkan dengan rumus (((i - 1) * 2) + 1)
+    // Jumlah bintang yang ditambahkan didapatkan dengan rumus (((i - 1) * 2) + 1)
     for(var k = 1 ; k <= (((i - 1) * 2) + 1) ; k++) {
         stars += ' * '
     }
