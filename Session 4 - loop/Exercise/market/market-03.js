@@ -1,6 +1,12 @@
-///////////////
+/////////////////
 // MARKET V.1.3
-///////////////
+/////////////////
+
+/*
+    1. Tampilkan informasi stock saat user menginput quantity
+    2. User akan diminta input ulang saat qiantity yang dinput melebih stock.
+    4. User akan diminta input ulang saat uang yang diinput kurang dari seharusnya
+*/
 
 // Menentukan harga setiap buah
 var priceApple = 10000
@@ -45,7 +51,7 @@ while(true){
 // Loop produk jeruk
 do {
     // Input jumlah orange yang akan dibeli
-    var qtyOrange = parseInt(prompt(`Masukkan jumlah Orange, Stock : ${stockOrange}`))
+    var qtyOrange = parseInt(prompt(`Masukkan jumlah Jeruk, Stock : ${stockOrange}`))
 
     // Jika permintaan jumlah orange melebihi stok yang ada
     if(qtyOrange > stockOrange){
@@ -101,4 +107,25 @@ while (true) {
 
         break
     }
+}
+
+
+// Terakhir Record
+
+if(money < finalPrice){
+    // Jika uangnya kurang, akan diminta input ulang
+    alert(`Uang yang Anda masukkan kurang ${margin}`)
+
+} else if(money > finalPrice){
+    // Jika uangnya lebih, berikan kembalian
+    alert(`Terimakasih, Uang kembali untuk Anda ${margin}`)
+
+    break
+
+} else {
+    // Jika uangnya pas, hanya ucapkan terimakasih
+    alert(`Terimakasih !`)
+
+    break
+
 }

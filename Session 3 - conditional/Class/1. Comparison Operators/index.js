@@ -1,47 +1,46 @@
 // Operator Perbandingan
 // Menghasilkan nilai boolean (true atau false)
 
-var result = 5 > 4
+var result = 5 > 4 // true
 console.log(result)
 
-console.log(5 > 4)
-console.log(5 < 4)
+console.log( 5 < 4 ) // false
+console.log( 5 < 5 ) // false
 
-// Sama dengan
-console.log(8 == 8)
-console.log(8 == 9);
+// compare : value
+console.log( 7 == 9 ) // false
+console.log( 7 == 7 ) // true
+console.log( 7 == "7" ) // true
 
-// Tidak sama dengan
-console.log(8 != 8)
-console.log(8 != 9);
 
-// Hanya membandingkan nilai
-console.log(10 == "10")
-// Membandingkan nilai dan tipe data
-console.log(10 === "10")
-console.log(10 === 10);
+// compare : value dan data type
+console.log( 7 === 9 ) // false
+console.log( 7 === 7 ) // true
+console.log( 7 === "7" ) // false
 
-// Boleh mengikuti ujian jika membawa pensil atau pulpen
-// Membawa pulpen tapi tidak membawa pensil : boleh
-// Tidak membawa pulpen tapi membawa pensil : boleh
-// Tidak membawa pulpen dan pensil : tidak boleh
+// compare : value
+console.log( 18 != 17 ) // true
+console.log( 24 != 24 ) // false
+console.log( 24 != "24" ) // false
 
-// Lebih besar atau sama dengan
+// compare : value dan data type
+console.log( 18 !== 17 ) // true
+console.log( 24 !== 24 ) // false
+console.log( 24 !== "24" ) // true
+
+
+// Boleh mengikuti ujian jika membawa pensil ATAU pulpen (PILIHAN)
+// Pulpen : ya | Pencil : tidak | Ujian : ya
+// Pulpen : tidak | Pencil : ya | Ujian : ya
+// Pulpen : tidak | Pencil : tidak | Ujian : tidak
+
 // 7 > 8 ? false
 // 7 == 8 ? false
-// false atau false
 // false
-console.log(7 >= 8)
+console.log( 7 >= 8) // false
 
-// 7 > 7 ? false
-// 7 == 7 ? true
-// false atau true
+// 7 < 8 ? true
+// 7 == 8 ? false
 // true
-console.log(7 >= 7)
 
-// 8 > 7 ? true
-// 8 == 7 ? false
-// true atau false
-// true
-console.log(8 >= 7)
-
+console.log( 7 <= 8 )

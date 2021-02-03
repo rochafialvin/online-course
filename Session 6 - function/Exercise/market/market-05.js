@@ -1,6 +1,17 @@
-// ###################### //
-// MARKET V5.0
-// ###################### //
+////////////////
+// MARKET V.1.5
+////////////////
+
+
+/*
+    1. Ubah looping yang menggunakan for loop menjadi menggunakan method for each, beberapa diantaranya:
+        a. Membuat list / daftar buah
+        b. Meminta jumlah qty untuk setiap produk
+        c. Menghitung total harga
+        d. Membuat detail belanja
+    2. Buatlah satu buah function yang berfungsi untuk membuat list produk. Jika sekarang masih menggunakan copy paste. Maka buatlah satu function yang akan mengerjakan ini, dan panggil function ini di setiap kita ingin menampilkan list buah.
+
+*/
 
 // [name, price, stock]
 var fruits = [

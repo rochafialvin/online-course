@@ -1,41 +1,64 @@
+////////////////////////////
+// DOUBLE PYRAMID TRIANGLE
+///////////////////////////
+
+
+// 1. s  s  s  s  *
+// 2. s  s  s  *  *  *
+// 3. s  s  *  *  *  *  *
+// 4. s  *  *  *  *  *  *  *
+// 5. *  *  *  *  *  *  *  *  *
+
 var stars = ''
-var rows = 7
+var rows = 5
 
+for (var i = 1 ; i <= rows ; i++) {
 
-for (var i = 1 ; i <= rows ; i++){
+    // Spasi per baris
+    for (var j = (rows - i) ; j >= 1 ; j--){
 
-
-    // Loop untuk menambahkan spasi ("s")
-    // Jumlah spasi yang ditambahkan didapatkan dengan mengurangi jumlah baris ("rows") dengan posisi bari saat ini ("i")
-    // (rows - i)
-    for(var j = (rows - i); j >= 1 ; j--){
         stars += '   '
-    }
-    
-    // Loop untuk menambahkan bintang ("*")
-    // Jumlah bintang yang ditambahkan didapatkan dengan rumus (((i - 1) * 2) + 1)
-    for(var k = 1 ; k <= (((i - 1) * 2) + 1) ; k++) {
-        stars += ' * '
+
     }
 
+    // Bintang per baris
+    for (var k = 1 ; k <= (i - 1) * 2 + 1 ; k++){
+
+        stars += ' * '
+
+    }
+
+    // New Line per baris
     stars += '\n'
 
 }
 
-for (var i = rows ; i >= 1 ; i--){
 
-    // space
-    for(var j = (rows - i); j >= 1 ; j--){
+// 5. *  *  *  *  *  *  *  *  *
+// 4. s  *  *  *  *  *  *  *
+// 3. s  s  *  *  *  *  *
+// 2. s  s  s  *  *  *
+// 1. s  s  s  s  *
+
+for (var i = rows ; i >= 1 ; i--) {
+
+    // Spasi per baris
+    for (var j = (rows - i) ; j >= 1 ; j--){
+
         stars += '   '
+
     }
 
-    // stars
-    for(var k = 1 ; k <= (((i - 1) * 2) + 1) ; k++) {
+    // Bintang per baris
+    for (var k = 1 ; k <= (i - 1) * 2 + 1 ; k++){
+
         stars += ' * '
+
     }
 
+    // New Line per baris
     stars += '\n'
 
 }
 
-console.log(stars);
+console.log(stars)

@@ -1,9 +1,8 @@
-//////////////////////////////////////////////
-// SORT : Mengurutkan data pada array secara 
-//////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+// SORT : Mengurutkan data pada array secara ascending (0 - 9 / a - z)
+//////////////////////////////////////////////////////////////////////
 
-
-var animals = ["anoa", "dragon", "cameleon", "bird"]
+var animals = ["anoa", "dragon", "cameleon", "bird", "cat"]
 
 console.table(animals)
 
@@ -11,12 +10,16 @@ animals.sort()
 
 console.table(animals)
 
+var numbers = [32, 11, 41 , 2]
+
+numbers.sort()
+
+console.table(numbers)
 
 
 /////////////////////////////////////////////////
-// REVERSE : Membalikkan urutan data  pada array
+// REVERSE : Membalikkan urutan data pada array
 /////////////////////////////////////////////////
-
 
 var days = ["sunday", "monday", "tuesday", "wednesday"]
 
@@ -26,21 +29,20 @@ days.reverse()
 
 console.table(days)
 
-
 /////////////////////////////////////////////////////////////////
 // JOIN : Menggabungkan data pada array dengan karakter tertentu
 /////////////////////////////////////////////////////////////////
 
 var days = ["sunday", "monday", "tuesday", "wednesday"]
 
-// sunday - monday - tuesday - wednesday
 var joinDash = days.join(" - ")
-console.log(joinDash);
+console.log(joinDash)
 
-// sunday, monday, tuesday, wednesday
-var joinComa = days.join(", ")
-console.log(joinComa);
+var joinComma = days.join(", ")
+console.log(joinComma)
 
-// sunday monday tuesday wednesday
 var joinSpace = days.join(" ")
-console.log(joinSpace);
+console.log(joinSpace)
+
+var joinAnd = days.join(" and ")
+console.log(joinAnd)

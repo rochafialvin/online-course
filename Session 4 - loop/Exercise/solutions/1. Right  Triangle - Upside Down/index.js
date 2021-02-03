@@ -1,37 +1,38 @@
-////////////////////////////////
-// Segitiga siku - siku terbalik
-///////////////////////////////
+///////////////////////////////////////////
+// RIGHT TRIANGLE - UPSIDE DOWN (Terbalik)
+//////////////////////////////////////////
 
-// *  *  *  *  *
-// *  *  *  *
-// *  *  *
-// *  *
-// *
+// baris ke 1 : *
+// baris ke 2 : * *
+// baris ke 3 : * * *
+// baris ke 4 : * * * *
+// baris ke 5 : * * * * *
+
+// baris ke 5 : * * * * *
+// baris ke 4 : * * * *
+// baris ke 3 : * * *
+// baris ke 2 : * *
+// baris ke 1 : *
 
 var stars = ''
-var row = 5
+var rows = 5
 
-////////////////////////////////////////////////////
-// baris ke - i
-// nilai pada "i" menunjukkan posisi baris saat ini
-////////////////////////////////////////////////////
+// i = 5 - 1
+// Loop i menentukan banyaknya baris
+for (var i = rows ; i >= 1 ; i--) {
 
-// baris ke - 1 : * * * * *
-// baris ke - 2 : * * * *
-// baris ke - 3 : * * *
-// baris ke - 4 : * * 
-// baris ke - 5 : * 
+    // Loop j menentukan banyaknya bintang perbaris
+    for (var j = 1 ; j <= i ; j++) {
 
-// Loop i untuk membuat baris
-// loop sebanyak nilai yang disimpan didalam "row"
-for(var i = 1; i <= row; i++){
-
-    // loop j untuk menambahkan bintang
-    // Menghitung mundur dari banyak bari ke posisi baris sekarang ( " i " )
-    for(var j = row; j >= i; j--){
+        // Menambahkan satu bintang dari nilai sebelumnya
         stars += ' * '
+
     }
-    
+
+    // Menambahkan satu new-line dari nilai sebelumnya
     stars += '\n'
+
 }
+
+// Menampilkan hasil akhirnya
 console.log(stars)

@@ -2,49 +2,64 @@
 // Syntax Array
 ////////////////
 
-// Membuat array berisi tiga data
+// Membuat array yang menyimpan tiga value
 var things = ["books", "pen", "clock"]
-// ["books", "pen", "clock"]
-console.log(things)
+// Menampilkan array things dalam bentuk table
+console.table(things)
+// Membuat array yang menyimpan empat value
+var random = [23, "Michael", true, 3.14]
+// Menampilkan array random dalam bentuk table
+console.table(random)
 
 //////////////
 // Access Data
 //////////////
 
-// Index dimulai dari nol
+// Index dapat dikatakan sebagai sistem penomoran data pada array yang dimulai dari nol
 
-// "books"
-console.log("things 0",things[0])
-// "pen"
-console.log(things[1])
-// "clock"
-console.log(things[2])
+// Mengakses data pada array things index ke satu
+console.log('things 0 : ' + things[1])
+// Mengakses data pada array random index ke nol
+console.log('random 0 ' + random[0])
+// Mengakses data pada array random index ke satu
+console.log('random 1 ' + random[1])
+
 
 ///////////////
 // Change Data
 ///////////////
 
-things[0] = "paper"
-
-things[2] = "shoes"
-
-// ["paper", "pen", "shoes"]
-console.log(things)
+// Membuat array dengan tiga value
+var things = ["books", "pen", "clock"]
+// Menampilkan array dalam bentuk table pada console
+console.table(things)
+// Mengganti value pada index ke nol
+things[0] = 'paper'
+// Mengganti value pada index ke dua
+things[2] = 'shoes'
+// Menampilkan array things dalam bentuk table
+console.table(things)
 
 ///////////////////
 // Create New Index
 ///////////////////
 
-things[3] = "clock"
-// ["paper", "pen", "shoes", "clock"]
+// Membuat array dengan tiga value
+var things = ["books", "pen", "clock"]
+// Menambahkan data baru yang sekaligus membuat index baru
+things[3] = 'shoes'
+// Menampilkan array things dalam bentuk table
+console.table(things)
+// Menambahkan data baru yang sekaligus membuat index baru
+things[5] = 'glass'
+// Menampilkan array things dalam bentuk table
 console.log(things)
-
-things[5] = "glass"
-// ["paper", "pen", "shoes", "clock", undefined, "glass"]
-console.log(things)
+// Menampilkan value pada index ke empat, yang mana adalah undefiend
+console.log(things[4])
 
 ///////////////////
 // Length of Array
 ///////////////////
 
-console.log(things.length);
+// Menampilkan jumlah index pada arrah things menggunakan property length
+console.log(`Length dari array things : ${things.length}`)

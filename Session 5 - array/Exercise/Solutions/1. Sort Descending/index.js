@@ -1,12 +1,14 @@
-///////////////////
-// SORT DESCENDING
-///////////////////
+///////////////////////////////////////
+// SORT DESCENDING ( 9 - 0 ) ( z - a )
+///////////////////////////////////////
 
-// Result : [ 'Elena', 'Dany', 'Chaplin', 'Bernard', 'Alex' ]
 var names = ["Alex", "Elena", "Chaplin", "Bernard", "Dany"]
 
 // [ 'Alex', 'Bernard', 'Chaplin', 'Dany', 'Elena' ]
 names.sort()
+
+console.log(names)
+
 // [ 'Elena', 'Dany', 'Chaplin', 'Bernard', 'Alex' ]
 names.reverse()
 

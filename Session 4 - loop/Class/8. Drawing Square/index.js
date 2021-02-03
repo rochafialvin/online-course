@@ -1,67 +1,31 @@
-// Square
+//////////
+// SQUARE
+//////////
 
-
-// * * * 
 // * * *
 // * * *
-
-/////////////////////////
-// Membuat vertical line
-////////////////////////
-var stars = ''
-
-for(var i = 0; i < 5; i++){
-
-    // Menambahkan bintang lalu enter
-    stars += '*' + '\n'
-}
-console.log(stars)
-
-//////////////////////
-// Membuat horizontal
-/////////////////////
+// * * *
 
 var stars = ''
-// Set-up for loop untuk dapat melakukan 5 kali loop
-for(var i = 0; i < 5; i++){
-    // Setiap loop akan menambahkan satu bintang
-    stars += ' * '
-
-}
-
-// Menampilkan hasil
-console.log(stars);
-
-
-///////////////////
-// Membuat persegi
-//////////////////
-
-// * * *
-// * * *
-// * * *
-
-// Melakukan looping untuk membuat tiga baris
-// Setiap barisnya, melakukan looping untuk menambahkan tiga bintang dan enter
-// Banyak baris = banyak bintang per baris
-
-var stars = ''
-var row = 3
+var rows = 3
 
 // Loop i untuk membuat baris
-// loop sebanyak nilai yang disimpan didalam "row"
-for (i = 1; i <= row; i++) {
+// Banyaknya loop i ditentukan dari variabel rows
+for (var i = 0 ; i < rows ; i++) {
 
-    // loop j untuk menambahkan bintang
-    // loop sebanyak nilai yang disimpan didalam "row"
-    for(j = 1; j <= row; j++){
+    // Loop j untuk menambahkan bintang per baris
+    // Banyaknya bintang setiap baris = jumlah baris
+    for (var j = 0 ; j < rows ; j++){
 
+        // Menambahkan satu bintang dari nilai sebelumnya
         stars += ' * '
 
     }
 
-    // Memindahkan kursor ke baris berikutnya
+    // Menambahkan new line setiap selesai membuat satu baris bintang (Horizontal line)
     stars += '\n'
+
 }
 
-console.log(stars);
+// Menampilkan hasil akhirnya pada console / terminal
+console.log(stars)

@@ -1,6 +1,6 @@
-/////////////////////
-// Drawing Horizontal
-/////////////////////
+///////////////////////////
+// Drawing Horizontal Line
+//////////////////////////
 
 //////////////////////////////////////
 // Menjumlahkan 0 + 1 + 2 + 3 + 4 + 5
@@ -10,7 +10,7 @@
 var number = 0
 // Setup loop untuk 5 kali putaran
 for(var i = 1; i <= 5; i++){
-    // Setiap loop akan menjumlahkan nilai number sebelumnya dengan nilai i
+    // Setiap loop akan menjumlahkan nilai number terakhir dengan nilai i
     number += i
 
 }

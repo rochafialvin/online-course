@@ -16,28 +16,21 @@ for (var i = 1 ; i <= 5 ; i++){
 
 }
 
-/////////////////////////////////////
-// Mencari angka yang dapat dibagi 5
-/////////////////////////////////////
+//////////////////////////////////////////////////////
+// Mencari angka random (0 - 99) yang dapati dibagi 5
+//////////////////////////////////////////////////////
+
+// Infinite loop : loop yang memiliki condition selalu true
 
 while(true){
 
-    // Angka random 0 - 99
+    // Mendapatkan angka random 0 - 99
     var rand = Math.floor(Math.random() * 100)
-
-    // Menampilkan angka random yang di dapat
-    console.log(`Checking ... ${rand}`)
-
-    // Evaluasi, apakah nilai rand akan habis dibagi 5
-    if(rand % 5 == 0){
-        // Jika nilai "rand" habis dibagi 5
-        // Tampilkan pada console
-        console.log(`Jackpot ! ${rand} `)
-        // Memberhentikan loop
+    // Menampilkan angka random
+    console.log(rand)
+    // Jika angka random dapat dibagi lima, maka hentingan proses loop
+    if (rand % 5 == 0) {
+        // Hentikan proses loop
         break
     }
-
-    // Jika nilai "rand" tidak habis dibagi 5
-    console.log(`Pass ... `)
-
 }

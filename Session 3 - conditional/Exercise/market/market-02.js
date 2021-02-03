@@ -2,12 +2,14 @@
 // MARKET V.1.2
 ////////////////
 
-// 1. Stock untuk setiap produk
-// 2. Ketika user akan input qty melebihi stock. Nilai stock ini yang akan disimpan sebagai qty
-// 3. Saat menampilkan informasi total yang harus dibayar. Kita akan meminta user untuk input sejumlah uang
-//      3.1 Jika uang yang di input kurang dari seharusnya : Transaksi dibatalkan, Uang yang Anda masukan kurang ...
-//      3.2 Jika uang yang di input sama jumlahnya dengan yang seharusnya : Terimakasih !
-//      3.3 Jika uang yang di input melebihi dari jumlah yang seharusnya : Terimakasih, Uang kembali untuk Anda ...
+/*
+  1. Stock untuk setiap produk
+  2. Ketika user akan input qty melebihi stock. Nilai stock ini yang akan disimpan sebagai qty
+  3. Saat menampilkan informasi total yang harus dibayar. Kita akan meminta user untuk input sejumlah uang
+       3.1 Jika uang yang di input kurang dari seharusnya : Transaksi dibatalkan, Uang yang Anda masukan kurang ...
+       3.2 Jika uang yang di input sama jumlahnya dengan yang seharusnya : Terimakasih !
+       3.3 Jika uang yang di input melebihi dari jumlah yang seharusnya : Terimakasih, Uang kembali untuk Anda ...
+*/
 
 
 // Tentukan harga satuan untuk setiap buah
@@ -21,7 +23,7 @@ var stockGrape = 7
 var stockOrange = 8
 
 // Meminta user input qty untuk setiap buahnya
-var qtyApple = parseInt(prompt(`Masukkan jumlah qty Apel, Stock : ${stockApple}`))
+var qtyApple = parseInt(prompt(`Masukkan jumlah qty Apel`))
 // Jika qty apel yang diminta melebih stock apel yang ada
 if(qtyApple > stockApple){
     // Menampilkan informasi bahwa qty melebihi stock.
@@ -31,7 +33,7 @@ if(qtyApple > stockApple){
 }
 
 
-var qtyGrape = parseInt(prompt(`Masukkan jumlah qty Anggur, Stock : ${stockGrape}`))
+var qtyGrape = parseInt(prompt(`Masukkan jumlah qty Anggur`))
 // Jika qty anggur yang diminta melebih stock anggur yang ada
 if(qtyGrape > stockGrape){
     // Menampilkan informasi bahwa qty melebihi stock.
@@ -40,7 +42,7 @@ if(qtyGrape > stockGrape){
     qtyGrape = stockGrape
 }
 
-var qtyOrange = parseInt(prompt(`Masukkan jumlah qty Jeruk, Stock : ${stockOrange}`))
+var qtyOrange = parseInt(prompt(`Masukkan jumlah qty Jeruk`))
 // Jika qty jeruk yang diminta melebih stock jeruk yang ada
 if(qtyOrange > stockOrange){
     // Menampilkan informasi bahwa qty melebihi stock.
@@ -71,20 +73,18 @@ var money = parseInt(
 )
 
 // Mencari margin antara total yang harus dibayar dengan input dari user
-// Jika uangnya kurang, maka margin akan bernilai negatif
-// Jika uangnya pas, margin akan bernilai nol
 var margin = Math.abs(money - finalPrice)
 
 if(money < finalPrice){
-    // Jika uangnya kurang, maka margin akan bernilai negatif
+    // Jika uangnya kurang, transaksi dibatalkan
     alert(`Transaksi dibatalkan, Uang yang anda masukkan kurang ${margin}`)
 
 } else if(money > finalPrice){
-    // Jika uangnya lebih, margin akan bernilai lebih dari nol
+    // Jika uangnya lebih, berikan kembalian
     alert(`Terimakasih, Uang kembali untuk Anda ${margin}`)
 
 } else {
-    // Jika uangnya pas, margin akan bernilai nol
+    // Jika uangnya pas, hanya ucapkan terimakasih
     alert(`Terimakasih !`)
 
 }

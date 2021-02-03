@@ -1,32 +1,65 @@
-//  *  *  *  *  *  *  *  *  * 
-//     *  *  *  *  *  *  * 
-//        *  *  *  *  * 
-//           *  *  * 
-//              * 
+////////////////////////////////
+// PYRAMID TRIANGLE UPSIDE DOWN
+///////////////////////////////
 
-// 5. *  *  *  *  *  *  *  *  *  
-// 4. s  *  *  *  *  *  *  * 
-// 3. s  s  *  *  *  *  * 
-// 2. s  s  s  *  *  * 
-// 1. s  s  s  s  * 
+
+// 5. *  *  *  *  *  *  *  *  *
+// 4. s  *  *  *  *  *  *  *
+// 3. s  s  *  *  *  *  *
+// 2. s  s  s  *  *  *
+// 1. s  s  s  s  *
+
+// Jumlah spasi ( j ) = rows - i
+// Jumlah bintang ( k ) = (i - 1) * 2 + 1
+
+var stars = ''
+var rows = 5
+
+// Loop untuk menentukan banyak baris
+for (var i = rows ; i >= 1 ; i--) {
+
+    // Loop untuk menentukan jumlah spasi tiap baris
+    for (var j = (rows - i) ; j >= 1 ; j--){
+
+        stars += '   '
+
+    }
+
+    // Loop untuk menentukan jumlah bintang tiap baris
+    for (var k = 1 ; k <= (i - 1) * 2 + 1 ; k++) {
+
+        stars += ' * '
+
+    }
+
+    // Menambahkan new-line tiap baris
+    stars += '\n'
+
+}
+
+// Menampilkan hasil akhir
+console.log(stars);
 
 
 var stars = ''
-var rows = 9
+var rows = 5
 
-// Loop i untuk membuat baris
-// loop sebanyak nilai yang disimpan didalam "rows"
-for (var i = rows ; i >= 1 ; i--){
 
-    // space
-    for(var j = (rows - i); j >= 1 ; j--){
+for (var i = rows ; i >= 1 ; i--) {
+
+
+    for (var j = (rows - i) ; j >= 1 ; j--){
+
         stars += '   '
+
     }
 
-    // stars
-    for(var k = 1 ; k <= (((i - 1) * 2) + 1) ; k++) {
+    for (var k = 1 ; k <= (i - 1) * 2 + 1 ; k++) {
+
         stars += ' * '
+
     }
+
 
     stars += '\n'
 
