@@ -10,6 +10,12 @@
 
 */
 
+var introduction = (name) => {
+  console.log(`Halo, nama saya adalah ${name}`);
+};
+
+introduction("Nagisa");
+
 var fullName = (firstName, lastName) => {
   console.log(`Halo, nama lengkap saya adalah ${firstName} ${lastName}`);
 };

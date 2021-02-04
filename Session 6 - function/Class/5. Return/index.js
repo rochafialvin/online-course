@@ -2,6 +2,15 @@
 /* RETURN (OUTPUT) */
 ////////////////////
 
+/* Basic */
+
+var basic = () => {
+  return 23;
+};
+
+var result = basic();
+console.log(result);
+
 /* Random 1 - 10 */
 var oneTenRandom = () => {
   var ran = Math.random();
@@ -12,13 +21,13 @@ var oneTenRandom = () => {
 };
 
 var oneTenResult = oneTenRandom();
-// console.log(`Random (1 - 10) : ${oneTenResult}`);
+console.log(`Random (1 - 10) : ${oneTenResult}`);
 
 /* Date object */
 var date = new Date();
 
-// console.log(date.getFullYear());
-// console.log(date.getMonth());
+console.log(date.getFullYear());
+console.log(date.getMonth());
 
 /* Time */
 var time = () => {
