@@ -2,41 +2,39 @@
 /* DEFAULT PARAMETER */
 ///////////////////////
 
-/* Parameter memiliki nilai awal yang akan digunakan jika tidak mendapatkan nilai */
+/* Parameter yang memiliki nilai awal yang akan digunakan jika tidak dapat menerima argument */
 
-var power = (a, b = 2) => {
-  var result = a;
-  for (var i = 1; i < b; i++) {
-    result *= a;
+// a dan b => parameter
+// var x = (a, b) => {}
+// 3 dan 5 => argument
+// x(3, 5)
+
+// 8 * 8
+// Pangkat 2 , Perkalian 1
+// 8 * 8 * 8
+// Pangkat 3 , Perkalian 2
+
+var power = (num1, num2 = 2) => {
+  var result = num1;
+
+  for (var i = 1; i < num2; i++) {
+    result *= num1;
   }
 
-  // return result;
-  return [a, b, result];
+  return [num1, num2, result];
 };
 
-var powResult = power(x);
-console.log(
-  `Hasil ${powResult[0]} pangkat ${powResult[1]} adalah ${powResult[2]}`
-);
+var result = power(8, 3);
+console.log(`${result[0]} pangkat ${result[1]} adalah ${result[2]}`);
 
-/* Posisikan default parameter dibagian belakang, dan jumlah default parameter dapat lebih dari satu */
+/* Gunakan undefined untuk melewati parameter yang memiliki nilai default */
 
-/* Contoh yang salah */
 var addition = (a, b = 2, c) => {
-  return a + b + c;
+  return [
+    ["a", a],
+    ["b", b],
+    ["c", c],
+  ];
 };
 
-console.log(addition(1, 3));
-
-/* Contoh yang benar */
-var addition = (a, b, c = 3) => {
-  return a + b + c;
-};
-
-console.log(addition(1, 3));
-
-var addition = (a, b = 2, c = 3) => {
-  return a + b + c;
-};
-
-console.log(addition(1));
+console.log(addition(2, undefined, 3));

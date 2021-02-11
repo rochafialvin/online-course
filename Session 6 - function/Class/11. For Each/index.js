@@ -7,14 +7,7 @@ var addition = (a, b) => {
   return a + b;
 };
 
-var x = 2;
-var y = 3;
-
-var result = addition(x, y);
-console.log(result);
-
-var result = addition(2, 3);
-console.log(result);
+addition(2, 5);
 
 /* Direct Callback */
 var direct = (arr, cb) => {
@@ -22,22 +15,14 @@ var direct = (arr, cb) => {
 };
 
 var nums = [1, 2, 3];
-var lenFn = (xyz) => {
-  return xyz.length;
-};
 
-/* first */
-var result = direct(nums, lenFn);
-console.log(result);
-
-/* second */
-var result = direct([1, 2, 3], (xyz) => {
-  return xyz.length;
+var result = direct(nums, (ary) => {
+  return ary.length;
 });
+
 console.log(result);
 
 /* For Each : Loop */
-
 var nums = [1, 2, 3];
 
 var cb = (val) => {
@@ -46,17 +31,36 @@ var cb = (val) => {
 
 nums.forEach(cb);
 
-/* For Each : value on index */
-
-var nums = [1, 2, 3];
-
-nums.forEach((val, idx) => {
-  console.log(`Index ke ${idx} : ${val}`);
+nums.forEach((val) => {
+  console.log(`Loop direct ${val}`);
 });
 
-/* For Each : multiple by two */
+/* For Each : value on index */
 
-var nums = [1, 2, 3];
+var nums = ["A", "B", "C"];
+
+var cb = (val, idx) => {
+  console.log(`Index ke ${idx} : ${val}`);
+};
+
+nums.forEach(cb);
+
+nums.forEach((val, idx) => {
+  console.log(`Direct index ke ${idx} : ${val}`);
+});
+
+/* For Each : third argument */
+
+var days = ["sunday", "monday", "tuesday"];
+
+days.forEach((val, idx, arr) => {
+  console.log(`val : ${val}`);
+  console.log(`idx : ${idx}`);
+  console.log(`arr : ${arr}`);
+});
+
+/* For Each : multple by two */
+var nums = [2, 5, 7];
 var result = [];
 
 nums.forEach((val) => {
@@ -67,23 +71,19 @@ console.log(result);
 
 /* For Each : highest and lowest */
 
-var numbers = [39, 101, 1, 5, 25, 13];
+var nums = [2, 5, 3];
 var min, max;
-
-numbers.forEach((val, idx) => {
-  // nilai pada index nol akan menjadi min dan max
+nums.forEach((val, idx) => {
   if (idx == 0) {
     min = max = val;
-    // jika nilai baru lebih kecil dari min
   } else if (val < min) {
     min = val;
-    // jika nilai baru lebih besar dari max
   } else if (val > max) {
     max = val;
   }
 });
 
-console.log(`Array: ${numbers}\nMin: ${min}\nMax: ${max}`);
+console.log(`Min : ${min}\nMax : ${max}`);
 
 //////////////////////////////////////////////////////////////////
 // Sebuah function yang dapat memisahkan nilai genap dan ganjil //
@@ -101,9 +101,9 @@ var oddEven = (numbers) => {
     } else {
       evens.push(number);
     }
-  });
 
-  return [odds, evens];
+    return [odds, evens];
+  });
 };
 
 var result = oddEven([11, 22, 34, 41, 52, 63, 71, 86]);

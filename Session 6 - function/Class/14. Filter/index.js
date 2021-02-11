@@ -3,38 +3,39 @@
 ///////////
 
 /*
-  1. Callback function akan me-return suatu boolean.
+  1. Callback function harus me-return suatu boolean.
 
   2. Callback me-return true : value yang sedang diproses akan disimpan ke array baru.
 
   3. Callback me-return false : value yang sedang diproses akan diabaikan.
 
-  2. Filter akan me-return array baru.
+  4. Filter akan me-return array baru.
 */
 
 /* Odd Filter */
 
-var numbers = [1, 2, 3, 4, 5];
+// var numbers = [1, 2, 3, 4, 5];
 
-var numResult = numbers.filter((number) => {
-  if (number % 2 == 1) {
-    return true;
-  } else {
-    return false;
-  }
+// var numResult = numbers.filter((number) => {
+//   if (number % 2 == 1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
+
+var filterResult = numbers.filter((number) => {
+  return number % 2 == 1; // true or false
 });
 
-var numResult = numbers.filter((number) => {
-  return number % 2 == 1;
-});
-
-console.log(numResult);
+// console.log(filterResult);
 
 /* Character length filter (more than 5 characters) */
 
 var words = ["Koro Sensei", "Jin Mori", "Eren", "Tanjirou", "Zorro"];
 
 var lenResult = words.filter((word) => {
+  // saat satu string memiliki lebih dari 5 karakter
   return word.length > 5;
 });
 
@@ -64,6 +65,14 @@ var persons = [
 ];
 
 var ageAddress = (arr) => {
+  // val = ["Justin", 29, "Banjarmasin"]
+  /*
+    arr = [
+      ["John", 43, "Jakarta"],
+      ["Baby", 21, "Jakarta"],
+      ["Tony", 34, "Surabaya"]
+    ]
+  */
   return arr.filter((val) => {
     return val[1] > 30 || val[2] == "Jakarta";
   });

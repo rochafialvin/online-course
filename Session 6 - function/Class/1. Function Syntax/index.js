@@ -13,9 +13,9 @@
     2. Output adalah proses yang dilakukan oleh function dalam menghasilkan value sehingga dapat disimpan di variabel.
 */
 
-/* Syntax function */
+/* Syntax Function */
 
-/* 
+/*
   keyword 'function' + nama + () + {}
 
   () -> Tempat menulis parameter
@@ -25,19 +25,19 @@
   {} -> Tempat menulis task yang akan dikerjakan saat function dijalankan
 */
 
-/* Membuat Function */
+/* Function Declaration */
 function firstStep() {
+  var name = "Ethan";
   console.log(
-    "Segala sesuatu yang besar, selalu dimulai dari satu langkah kecil."
+    `Segala sesuatu yang besar, selalu dimulai dari satu langkah kecil. - ${name}`
   );
 }
 
-/* Memanggil / menjalankan function */
-firstStep();
 firstStep();
 
+/* Function Expression */
 var keepGoing = function () {
-  console.log("Apapun yang terjadi, teruslah melangkah.");
+  console.log(`Apapun yang terjadi, teruslah melangkah.`);
 };
 
 keepGoing();
@@ -49,37 +49,13 @@ keepGoing();
 leaf();
 
 function leaf() {
-  console.log("Hijau Daun");
+  console.log(`Hijau Daun`);
 }
 
 /* Not Hoisted */
 
-tea();
-
-var tea = () => {
-  console.log("Teh Hijau");
-};
-
-/* Replaced */
-
-function leaf() {
-  console.log("Hijau Daun");
-}
-
 leaf();
 
-function leaf() {
-  console.log("Daun Hijau");
-}
-
-/* Not Replaced */
-
-var tea = () => {
-  console.log("Teh Hijau");
-};
-
-tea();
-
-var tea = () => {
-  console.log("Hijau Teh");
+var leaf = function () {
+  console.log(`Hijau Daun`);
 };

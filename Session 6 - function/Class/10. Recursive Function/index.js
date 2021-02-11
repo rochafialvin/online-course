@@ -5,16 +5,21 @@
 /* Function yang memanggil dirinya sendiri */
 
 var countdown = (counter) => {
-  // Munculkan angka pada terminal
+  // counter = 0
   console.log(counter);
-  // Kurangi angka dengan 1
+  // counter - 1 = -1
   counter--;
-
-  // Jika angka tidak lebih kecil dari 0
+  // countdown(0)
   if (counter >= 0) {
-    // Memanggil dirinya sendiri
     countdown(counter);
   }
 };
 
-countdown(3);
+countdown(10);
+
+// 5
+// 4
+// 3
+// 2
+// 1
+// 0

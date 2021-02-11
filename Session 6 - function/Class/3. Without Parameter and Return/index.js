@@ -11,10 +11,14 @@
 */
 
 var fullName = () => {
-  var firstName = "Issam";
-  var lastName = "Alnajjar";
+  var firstName = "Isac";
+  var lastName = "Newton";
 
   console.log(`Halo, nama lengkap saya adalah ${firstName} ${lastName}`);
 };
 
-fullName();
+var result = fullName();
+console.log(`result : ${result}`)
+
+var intResult = parseInt("234")
+console.log(`intResult : ${intResult}`)

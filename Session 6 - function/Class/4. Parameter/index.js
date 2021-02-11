@@ -14,92 +14,79 @@ var introduction = (name) => {
   console.log(`Halo, nama saya adalah ${name}`);
 };
 
-introduction("Nagisa");
+// introduction("Nagisa");
 
 var fullName = (firstName, lastName) => {
   console.log(`Halo, nama lengkap saya adalah ${firstName} ${lastName}`);
 };
 
-fullName("Kyojuro", "Rengoku");
+// fullName("Kyojuro", "Rengoku");
+// fullName("Isaac", "Newton");
 
-/* Penjumlahan */
-
-var addition = (a, b) => {
-  var result = a + b;
-  console.log(`Hasil penjumlahan ${a} dan ${b} adalah ${result}`);
+var addition = (num1, num2) => {
+  var result = num1 + num2;
+  console.log(`Hasil penjumlahan ${num1} dan ${num2} adalah ${result}`);
 };
 
-/* Pengurangan */
+// addition(7, 3);
+// addition(5, 11);
 
-var subtraction = (a, b) => {
-  var result = a - b;
-  console.log(`${a} - ${b} = ${result}`);
+var multiplication = (num1, num2) => {
+  var result = num1 * num2;
+  console.log(`${num1} * ${num2} = ${result}`);
 };
 
-/* Perkalian */
-
-var multiple = (a, b) => {
-  var result = a * b;
-  console.log(`${a} * ${b} = ${result}`);
-};
-
-/* Pembagian */
-
-var division = (a, b) => {
-  var result = a - b;
-  console.log(`${a} - ${b} = ${result}`);
-};
-
-addition(7, 4);
-subtraction(7, 4);
-multiple(7, 4);
-division(7, 4);
+// multiplication(7, 3);
+// multiplication(5, 11);
 
 /* Array Checking */
+var days = [3, 26, 999, 23, 2, 1, 2, 3, 12];
+
+/*
+  Array ini memiliki 3 data sebagai berikut : sunday, monday, tuesday
+*/
+
 var arrChecking = (arr) => {
-  var arrLength = arr.length;
+  // mencari tahu banyaknya data pada array ? length
+  var arrLen = arr.length;
+  // menggabungkan setiap data pada array dengan koma dan spasi ? join
   var arrJoin = arr.join(", ");
 
-  console.log(
-    `Array ini memiliki ${arrLength} data sebagai berikut: ${arrJoin}`
-  );
+  console.log(`Array ini memiliki ${arrLen} data sebagai berikut: ${arrJoin}`);
 };
 
-var days = ["Sunday", "Monday", "Tuesday"];
-arrChecking(days);
+// arrChecking(days);
 
-/* Array Calculator */
+/* Array Caculator */
+
+var numbers = [1, 2, 3];
+
 var arrCalculator = (arr, operation, operand) => {
   var arrResult = [];
-  var operationResult;
 
   switch (operation) {
     case "addition":
       for (var i = 0; i < arr.length; i++) {
-        operationResult = arr[i] + operand;
-        arrResult.push(operationResult);
+        arrResult.push(arr[i] + operand);
       }
 
-      console.log(`Before : ${arr}\nAfter: ${arrResult}`);
+      console.log(`Before : ${arr}\nAfter : ${arrResult}`);
 
       break;
 
     case "multiplication":
       for (var i = 0; i < arr.length; i++) {
-        operationResult = arr[i] * operand;
-        arrResult.push(operationResult);
+        arrResult.push(arr[i] * operand);
       }
 
-      console.log(`Before : ${arr}\nAfter: ${arrResult}`);
+      console.log(`Before : ${arr}\nAfter : ${arrResult}`);
 
       break;
 
     default:
-      console.log(`invalid operation: ${operation}`);
+      console.log(`Invalid Operation`);
       break;
   }
 };
 
-var numbers = [23, 2, 290];
-
-arrCalculator(numbers, "addition", 2);
+arrCalculator(numbers, "multiplication", 10);

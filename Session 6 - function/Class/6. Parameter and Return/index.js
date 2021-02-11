@@ -2,26 +2,16 @@
 /* PARAMETER and RETURN */
 //////////////////////////
 
-/* Contoh built in function yang me-return nilai */
-var x = parseInt("234");
-// console.log(x);
-
-/* Addition with no return */
-var addition = (a, b) => {
-  var addResult = a + b;
-  console.log(`addResult : ${addResult}`); // delete it
-  // nilai pada addResult akan dikeluarkan (output)
-  return addResult;
+var addition = (num1, num2) => {
+  return num1 + num2;
 };
 
-/* Addition with return */
-var result = addition(3, 5);
-console.log(`result : ${result}`);
-
-/* Full Name */
-var createFullName = (first, second) => {
-  return `${first} ${second}`;
-};
-
-var result = createFullName("Robert", "Johnson");
+var result = addition(9, 8);
 console.log(result);
+
+var fullName = (firstName, lastName) => {
+  return `${firstName} ${lastName}`;
+};
+
+var fullResult = fullName("Robert", "Johnson");
+console.log(fullResult);

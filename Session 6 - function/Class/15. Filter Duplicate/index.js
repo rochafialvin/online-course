@@ -2,53 +2,57 @@
 /* FILTER DUPLICATE */
 //////////////////////
 
-/*
-  1. Method filter membutuhkan array untuk di proses, dan callback function yang akan memproses setiap data dari array.
-
-  2. Filter akan menjalankan callback function sebanyak data yang ada di array, dan setiap kali dijalankan, data pada array akan masuk secara bergantian.
-
-  3. Callback yang masuk kedalam filter akan melakukan return boolean, setiap yang di return adalah true, maka data yang masuk akan disimpan ke array baru, jika false, maka data yang masuk pada saat itu tidak akan disimpan.
-
-  4.Array baru yang berisi hasil dari proses filter akan di return oleh filter sehingga hasilnya dapat disimpan ke dalam variabel.
-*/
-
+/* Filter : for loop */
 var filterForLoop = (arr, cb) => {
-  var result = [];
+  // arr = [1, 23, 31, 20]
+  // cb = (val) => { return val % 2 == 1};
 
+  // arrLoop = [1, 23, 31]
+  var arrLoop = [];
+
+  // i = 4
+  // arr.length : 4
   for (var i = 0; i < arr.length; i++) {
+    // cb(20)
     var isTrue = cb(arr[i]);
+    // isTrue = false
 
     if (isTrue) {
-      result.push(arr[i]);
+      arrLoop.push(arr[i]);
     }
   }
 
-  return result;
+  // arrLoop = [1, 23, 31]
+  return arrLoop;
 };
 
+/* Filter : for each */
 var filterForEach = (arr, cb) => {
-  var result = [];
+  // arr = [23, 20]
+  // cb =  (val) => { return val % 2 == 1 };
 
+  // arrForEach = [23]
+  var arrForEach = [];
+
+  // val = 20
   arr.forEach((val) => {
-    var isTrue = cb(val);
-
-    if (isTrue) {
-      result.push(val);
+    // cb(20)
+    if (cb(val)) {
+      arrForEach.push(val);
     }
   });
 
-  return result;
+  // arrForEach = [23]
+  return arrForEach;
 };
 
-var numbers = [1, 2, 3, 4, 5];
-var odd = (val) => val % 2 == 1;
-var even = (val) => val % 2 == 0;
+var numbers = [23, 20];
+var odd = (val) => {
+  return val % 2 == 1;
+};
 
 var forLoopResult = filterForLoop(numbers, odd);
 console.log(forLoopResult);
 
 var forEachResult = filterForEach(numbers, odd);
 console.log(forEachResult);
-
-var filterResult = numbers.filter(odd);
-console.log(filterResult);

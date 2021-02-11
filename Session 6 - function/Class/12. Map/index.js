@@ -1,26 +1,42 @@
-//////////
+/////////
 /* MAP */
 /////////
 
 /*
-  1. Callback function akan me-return suatu nilai (tipe data apapun), dimana setiap nilai yang direturn akan masuk ke dalam array baru yang dibuat oleh function map secara internal, bukan karena kita yang menulis kodenya.
+  1. Callback function harus me-return suatu nilai (tipe data apapun), dimana setiap nilai yang direturn akan masuk ke dalam array baru yang dibuat oleh function map secara internal, bukan karena kita yang menulis kodenya.
 
   2. Map akan me-return array baru yang sudah berisi nilai yang di return oleh callback function
 */
 
-/* Multiple number by 2 */
-// gunakan val lalu ubah jadi number
+// return nilai
+// nilai masuk ke array baru
+// array baru akan di return oleh map
+
+/* Multiple by two : For Each */
+
+var numbers = [1, 2, 3];
+var arrResult = [];
+
+numbers.forEach((number) => {
+  arrResult.push(number * 2);
+});
+
+console.log(`for each : ${arrResult}`);
+
+/* Multiple by two : Map */
 
 var numbers = [1, 2, 3];
 
-var numsResult = numbers.map((number) => {
+var mapResult = numbers.map((number) => {
   return number * 2;
 });
 
-console.log(numbers);
-console.log(numsResult);
+console.log(`map : ${mapResult}`);
 
 /* Man or Woman */
+
+/* Mrs. Janette */
+/* Mr. Kim Shin */
 
 var persons = [
   ["Janette", "Woman"],
@@ -28,16 +44,20 @@ var persons = [
   ["Tony", "Man"],
 ];
 
-var personsResult = persons.map((person) => {
-  if (person[1] == "Woman") {
-    return `Mrs. ${person[0]}`;
-  }
+var mapResult = persons.map((person) => {
+person = ["Tony", "Man"]
+name = "Tony"
+arr = [mrs janette, mr. kim shin, mr. tony]
+  var name = person[0];
 
-  return `Mr. ${person[0]}`;
+  if (person[1] == "Woman") {
+    return `Mrs. ${name}`;
+  } else {
+    return `Mr. ${name}`;
+  }
 });
 
-console.log(persons);
-console.log(personsResult);
+console.log(mapResult);
 
 //////////////////////////////////////////////////////////////////
 // Sebuah function yang dapat menentukan nilai genap dan ganjil //
@@ -45,16 +65,28 @@ console.log(personsResult);
 // [ [1, "Ganjil"], [2, "Genap"], [3, "Ganjil"], [4, "Genap"] ] //
 //////////////////////////////////////////////////////////////////
 
-var nums = [1, 2, 3, 4];
+var nums = [1, 2, 3];
 
 var oddEven = (numbers) => {
+  // numbers = [1, 2, 3]
+  /*
+    arrMap = [
+      [1 , "Ganjil"],
+      [2 , "Genap"],
+      [3 , "Ganjil"]
+    ]
+  */
   return numbers.map((number) => {
-    if (number % 2 == 1) return [number, "Ganjil"];
-
-    return [number, "Genap"];
+    // number = 3
+    if (number % 2 == 1) {
+      // [3 , "Ganjil"]
+      return [number, "Ganjil"];
+    } else {
+      // [2 , "Genap"]
+      return [number, "Genap"];
+    }
   });
 };
 
-var oddEvenResult = oddEven([1, 2, 3, 4]);
-console.log(oddEvenResult);
+var oddEvenResult = oddEven(nums);
 console.table(oddEvenResult);
