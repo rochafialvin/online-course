@@ -34,7 +34,7 @@ var cart = [];
 while (true) {
   var menu = parseInt(
     prompt(`
-    Apa yang ingin ada lakukan :
+    Apa yang ingin anda lakukan :
     1. Menampilkan daftar buah
     2. Menambah buah
     3. Menghapus buah
