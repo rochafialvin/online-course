@@ -154,10 +154,7 @@ while (true) {
     // akan terus berulang selama uang yang dimasukkan oleh user masih kurang dari yang seharusnya
     while (true) {
       // Menampilkan informasi belanja termasuk total uang yang harus dibayar
-      var money = parseInt(
-        prompt(`Detail Belanja\n\n${finalReport}\n\nTotal : ${finalPrice}`)
-      );
-
+      var money = parseInt(prompt(`Detail Belanja\n\n${finalReport}\n\nTotal : ${finalPrice}`));
       var margin = Math.abs(money - finalPrice);
 
       // Jika uang yang dimasukkan kurang dari seharusnya

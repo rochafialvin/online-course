@@ -180,7 +180,7 @@ while (true) {
       );
 
       // selisih dari uang yang diberikan dengan jumlah uang yang harus dibayarkan
-      var margin = Math.abs(money - finalReport);
+      var margin = Math.abs(money - finalPrice);
 
       // jika uang yang diberikan kurang dari yang seharusnya
       if (money < finalPrice) {

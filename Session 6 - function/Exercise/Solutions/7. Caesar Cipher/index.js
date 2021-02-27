@@ -2,27 +2,36 @@
 /* CAESAR CIPHER */
 //////////////////
 
-/* Setiap hurufnya akan berubah menjadi huruf berikutnya dengan jarak tertentu */
+/* Setiap huruf akan diubah menjadi huruf berikutnya dengan jarak tertentu */
+
+/* abc (shift 3) def */
+
 /* "Sunday Six" (shift = 2)  ==>  "Uwpfca Ukz" */
+ //
 
-/* 
+/*
 
-  length = 5 
-  a b c d e 
+  length = 5
+  a b c d e
 
-  b shift = 7 
+  b shift 3 --> e
+  1 + 3 = 4 --> e
+
+  b shift 5 --> b
+  b shift 10 --> b
+
+  b shift 7 --> d (index 3)
+  1 + 7 = 8 % 5 = 3
 
   next index = (index + shift) % length
-  next index = (1 + 7) % 5 = 3
-
-
-  alphabet pada index 3 adalah d
 
 */
 
-/* 
-  a b c d e f g h i j k l m n o p q r s t u v w x y z
-  "Abc Yz" shift 2
+/*
+  length = 26
+  alphabet = a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+  "Abc Yz" shift 2 --> "Cde Ab"
 
   // split(" ")
   result : ["Abc", "Yz"]
@@ -30,76 +39,77 @@
   // map
   result : ["Cde", "Ab"]
 
+    "Abc"
+
     // lowercase
     result : "abc"
 
-    // split 
+    // split("")
     result : ["a", "b", "c"]
 
     // map
     result : ["c", "d", "e"]
 
-      next index = index + (shift % length of alphabet)
-      next index = 0 + (2 % 26) = 2
+      next index = (index + shift) % length
+      next index = (0 + 2) % 26 = 2 % 26 = 2
+      next index = 2
+
       return alphabet[2]
 
-    // toUppercCase untuk huruf dengan index ke 0
+    // toUpperCase
     result : ["C", "d", "e"]
 
-    // join
-    result : "Cde"
+    // join("")
+    result : Cde
 
-    return "Cde"
+    return Cde
 
   // join(" ")
-  result : "Cde Ab"
+  result: "Cde Ab"
 
   return "Cde Ab"
-
 */
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-// console.table(alphabet);
 
-// "Abc Yz"
-const caesarcipher = (word, shift) => {
-  // split(" ")
+const caesarCipher = (word, shift) => {
+  // word : "Abc Yz"
+  // shift: 2
+
   // words = ["Abc", "Yz"]
-  const words = word.split(" ");
+  const words = word.split(" ")
 
-  // map
+  // words = ["Abc", "Yz"]
   // wordsResult = ["Cde", "Ab"]
   const wordsResult = words.map((word) => {
-    // word = "Abc"
-    // lowercase , word = "abc"
-    // split, wordSplitted = [a b c]
-    const wordSplitted = word.toLowerCase().split("");
+    // word : "Abc"
+    // wordSplitted = ["a", "b", "c"]
+    const wordSplitted = word.toLowerCase().split("")
 
-    // map
-    // wordShifted = [c d e]
-    const wordShifted = wordSplitted.map((word, idx) => {
-      // word = a
-      // nextIndex = (0 + 2) % 26 = 2
-      const nextIndex = (alphabet.indexOf(word) + shift) % 26;
-      // alphabet[2] = c
-      return alphabet[nextIndex];
-    });
+    // wordSplitted = ["a", "b", "c"]
+    // wordShifted = ["c", "d", "e"]
+    const wordShifted = wordSplitted.map((word) => {
+      // word : "b"
+      // next index = (index + shift) % 26
 
-    // toUppercCase untuk huruf dengan index ke 0
-    // wordShifted = [C d e]
-    wordShifted[0] = wordShifted[0].toUpperCase(); // C
+      // nextIndex = (1 + 2) % 26 = 3
+      const nextIndex = (alphabet.indexOf(word) + shift) % 26
 
-    // join
-    // [C d e]
-    // Cde
-    return wordShifted.join("");
-  });
+      // alphabet[3] = d
+      return alphabet[nextIndex]
 
-  // join(" ")
-  return wordsResult.join(" ");
-};
+    })
 
-// Cde Zab
-console.log(caesarcipher("Abc Xyz", 2));
-// Uwpfca Ukz
-console.log(caesarcipher("Sunday Six", 2));
+    // wordShifted = ["C", "d", "e"]
+    wordShifted[0] = wordShifted[0].toUpperCase()
+
+    // wordShifted = "Cde"
+    return wordShifted.join("")
+  })
+
+  // wordsResult = "Cde Ab"
+  return wordsResult.join(" ")
+}
+
+console.log(caesarCipher("Abc Yz", 2))
+console.log(caesarCipher("Sunday Six", 2))
