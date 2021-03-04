@@ -1,38 +1,31 @@
-////////////////////////////
+//////////////////////////////
 /* Exercise - Data Object 2 */
-////////////////////////////
+//////////////////////////////
 
+const timeFunction = () => {
+  const time = new Date();
 
-/* Date object */
-const date = new Date();
-
-console.log(date.__proto__)
-console.log(date.getFullYear());
-console.log(date.getMonth());
-
-
-/* Time */
-const time = () => {
-  const x = new Date();
-
-  const year = x.getFullYear();
+  const year = time.getFullYear();
 
   // 0 - 11
   // Jan - Dec
-  const month = x.getMonth();
+  const month = time.getMonth();
 
   // 1 - 31
-  const date = x.getDate();
+  const date = time.getDate();
 
   // 0 - 6
   // Sun - Sat
-  const day = x.getDay();
+  const day = time.getDay();
 
   // 0 - 23
-  const hours = x.getHours();
+  const hours = time.getHours();
 
   // 0 - 59
-  const minutes = x.getMinutes();
+  const minutes = time.getMinutes();
+
+  // 0 - 59
+  const seconds = time.getSeconds()
 
   const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 
@@ -57,9 +50,20 @@ const time = () => {
     bulan : months[month],
     tahun : year,
     jam : hours,
-    menit : minutes
+    menit : minutes,
+    detik : seconds
   }
-};
 
-const timeNow = time();
-console.log(timeNow)
+}
+
+
+let {hari, tanggal, bulan, tahun, jam, menit, detik} = timeFunction()
+
+// minutes = 2
+if(menit < 10){menit = `0${menit}`}
+
+// minutes = 2
+if(detik < 10){detik = `0${detik}`}
+
+console.log(`Hari ini ${hari}, ${tanggal} ${bulan} ${tahun}`)
+console.log(`Pukul ${jam}:${menit}:${detik}`)

@@ -2,23 +2,16 @@
 /* THIS KEYWORD */
 //////////////////
 
-let person = {
+const person = {
   firstName : "Topias",
   lastName : "Taavitsainen",
   nickname : "Topson",
-
-  thank: function(b) {
-    console.log(`Hello, good ${b}`)
+  greet : function(time) { console.log(`Good ${time}`)},
+  intro : function(time) {
+    this.greet(time)
+    console.log(`My full name is ${this.firstName} ${this.lastName}`)
   },
 
-  introduction: function(a) {
-    this.thank(a)
-    console.log(`My full name is ${this.firstName} ${this.lastName}`)
-  }
 }
 
-person.thank("morning")
-
-person.introduction("evening")
-
-
+person.intro("Morning")

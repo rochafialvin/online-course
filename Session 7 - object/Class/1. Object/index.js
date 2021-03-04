@@ -3,6 +3,9 @@
 ////////////
 
 /* key : value */
+/* value : function, key : method */
+/* value : selain function , key : property */
+
 
 /* Literal */
 let captain = {
@@ -47,9 +50,9 @@ console.log(captain["height"]);
 captain["play"]("dota");
 
 
-////////////////////////////////////
-/* Changing properties and method */
-////////////////////////////////////
+////////////////////
+/* Changing value */
+////////////////////
 
 captain.pets = "dog";
 captain.height = 169;
@@ -61,6 +64,19 @@ captain.play = function(game) {
 console.log(captain);
 // Let's play some dota
 captain.play("dota");
+
+/////////////////
+/* Add new key */
+/////////////////
+
+// Add new property
+captain.nationality = "Germany"
+// Add new method
+captain.greet = function(time) { console.log(`Good ${time}`) }
+
+console.log(captain)
+console.log(captain.nationality)
+captain.greet("Morning")
 
 /////////////////
 /* Destructure */
@@ -93,4 +109,4 @@ console.log(capitan.name);
 // [ 'owl', 'dog' ]
 console.log(capitan.pets);
 // Playing counter strike
-capitan.play("counter strike");
+capitan.play("Dota");

@@ -4,45 +4,50 @@
 
 /* Blueprint untuk membuat object, dengan class akan mempermudah dalam membuat object */
 
-let kuroky = {
+const kuroky = {
   name : "Kuro Salehi",
   age : 28,
-  nationality: "Germany", // Added later
+  nationality: "Germany",
   position : "Captain",
   team : "Nigma"
 }
 
-let ceb = {
+const ceb = {
   name : "Sebastien Deb",
   age : 28,
-  nationality: "France", // Added later
+  nationality: "France",
   position : "Coach",
   team : "OG"
 }
 
-let puppey = {
+const puppey = {
   name : "Clement Ivanov",
   age : 30,
-  nationality: "Estonia", // Added later
+  nationality: "Estonia",
   position : "Captain",
   team : "Team Secret"
 }
 
-
 /* Syntax */
-
 class Player {
-  constructor(name, age, nationality, position, team){
-    this.name = name,
-    this.age = age,
-    this.nationality = nationality,
-    this.position = aposition,
+  constructor(name, age, nationality, position, team) {
+    this.name = name
+    this.age = age
+    this.nationality = nationality
+    this.position = position
     this.team = team
+  }
+
+  intro() {
+    console.log(`Hello, my name is ${this.name}`)
   }
 }
 
-let dendi = new Player("Danil Ishutin", 30, "Ukraine", "Captain", "B8")
-let kuroky = new Player("Kuro Salehi", 28, "Germany", "Captain", "Nigma")
-let ceb = new Player("Sebastien Deb", 28, "France", "Coach", "OG")
+const dendi = new Player("Danil Ishutin", 30, "Ukraine", "Captain", "B8")
+const kuroky = new Player("Kuro Salehi", 28, "Germany", "Captain", "Nigma")
 
 console.log(dendi)
+console.log(kuroky)
+
+dendi.intro()
+kuroky.intro()
