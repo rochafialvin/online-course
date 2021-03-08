@@ -1,0 +1,19 @@
+Buat 3 commit :
+file : profile.js
+1. Update Photo
+2. Update Address
+3. Update Phone Number
+
+git reset untuk ketiga commit diatas
+lalu buat satu commit "Update Profile"
+
+
+Buat 3 commit :
+file : payment.js
+1. Add M-Banking Payment
+2. Add Credit Payment
+file : coupon.js
+3. Add Coupon
+
+git reset hard yang akan meremove ketiga commit
+berikut dengan kodenya

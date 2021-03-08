@@ -1,0 +1,22 @@
+Buat satu branch bernama Feature 1
+file : profile.js
+1. Update Profile
+2. Update Photo
+3. Update Number
+file : payment.js
+4. Add M-Banking Payment
+5. Add Credit Payment
+
+Merge ke master, lalu hapus branch nya
+
+Command :
+
+git branch feature-1
+
+git switch feature-1
+
+git commit 5 times
+
+git switch master
+
+git merge feature-1
