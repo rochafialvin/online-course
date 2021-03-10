@@ -6,6 +6,6 @@
 
 4. git config user.email
 
-5. git config --global user.name = rochafialvin
+5. git config --global user.name rochafialvin
 
-6. git config --global user.email = rochafi.dev@gmail.com
+6. git config --global user.email rochafi.dev@gmail.com

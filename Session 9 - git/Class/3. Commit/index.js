@@ -1,1 +1,1 @@
-console.log("Modified and Staging")
+console.log("Commit ready")

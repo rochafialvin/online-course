@@ -1,5 +1,3 @@
-console.log("Create Login")
-// commit : Create Login
+console.log("Register")
 
-console.log("Create Login V2")
-// commit : Create Login V2
+console.log("Register V2")

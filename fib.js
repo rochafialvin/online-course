@@ -1,23 +1,23 @@
-const reverseWords = (string) => {
+// const reverseWords = (string) => {
 
     
-    const wordsArr = string.split(' ');
-    let reversedWordsArr = [];
+//     const wordsArr = string.split(' ');
+//     let reversedWordsArr = [];
 
-    wordsArr.map((word) => {
-        let reversedWord = '';
+//     wordsArr.map((word) => {
+//         let reversedWord = '';
         
-        for (let i = word.length - 1; i >= 0; i--) {
-            reversedWord += word[i];
-        }
+//         for (let i = word.length - 1; i >= 0; i--) {
+//             reversedWord += word[i];
+//         }
 
-        reversedWordsArr.push(reversedWord);
-    });
+//         reversedWordsArr.push(reversedWord);
+//     });
 
-    return reversedWordsArr.join(' ');
-};
+//     return reversedWordsArr.join(' ');
+// };
 
-console.log(reverseWords('Hai aku Lintang'));
+// console.log(reverseWords('Hai aku Lintang'));
 
 
 /*
@@ -27,3 +27,12 @@ console.log(reverseWords('Hai aku Lintang'));
  
     7 Maret : RE-RECORD Audio 5 6 7 8
 */
+
+class NameOfClass {
+    constructor(parameters) {
+        this.property = value,
+        this.property = value
+    }
+
+    method() { }
+}

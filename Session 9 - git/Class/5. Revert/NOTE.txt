@@ -1,3 +1,0 @@
-git revert <commit id email verification>
-
-git revert <commit id create registration>
