@@ -1,0 +1,9 @@
+# Ignore folder
+credentials/
+
+# Ignore file
+token.js
+already.js
+
+# Ignore all txt files
+*.txt
