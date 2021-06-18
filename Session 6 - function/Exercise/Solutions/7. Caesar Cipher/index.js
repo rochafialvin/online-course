@@ -113,3 +113,15 @@ const caesarCipher = (word, shift) => {
 
 console.log(caesarCipher("Abc Yz", 2))
 console.log(caesarCipher("Sunday Six", 2))
+
+/*
+
+4: 45
+
+12: 00
+
+12: 18
+
+17: 49
+
+*/

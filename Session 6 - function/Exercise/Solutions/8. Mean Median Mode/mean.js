@@ -1,17 +1,20 @@
-// MEAN
+// MEAN //
 
+// numbers :  [1, 2, 3, 5, 7]
 const mean = (numbers) => {
-  let sum = 0;
+  let sum = 0
 
-  // numbers :  [1, 1, 3, 5, 7]
-  // number :
-  // sum :
   numbers.forEach((number) => {
-    sum += number;
-  });
+    // number : 7
+    // sum : 11
+    sum += number
 
-  // 17 / 4
-  return sum / numbers.length;
-};
+    // sum : 18
+    
+  })
 
-console.log(mean([1, 1, 3, 5, 7]));
+  // 18 : 5 = 3.6
+  return sum / numbers.length
+}
+
+console.log(mean([1, 2, 3, 5, 7]))
