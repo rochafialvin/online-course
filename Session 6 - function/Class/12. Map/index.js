@@ -45,9 +45,9 @@ var persons = [
 ];
 
 var mapResult = persons.map((person) => {
-person = ["Tony", "Man"]
-name = "Tony"
-arr = [mrs janette, mr. kim shin, mr. tony]
+  // person = ["Tony", "Man"];
+  // name = "Tony";
+  // arr = [mrs janette, mr. kim shin, mr. tony]
   var name = person[0];
 
   if (person[1] == "Woman") {
