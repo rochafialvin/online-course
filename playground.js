@@ -21,12 +21,12 @@
  * the standard input according to the problem statement.
  **/
 
-const N = parseInt(readline());
-const W = readline();
+// const N = parseInt(readline());
+// const W = readline();
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-for (var i = 1; i <= N; i++) {
-  console.log(W);
-}
+// for (var i = 1; i <= N; i++) {
+//   console.log(W);
+// }

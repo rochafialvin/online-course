@@ -1,0 +1,17 @@
+/* git status */
+
+/* git add index.js */
+/* Mengcopy file dari area modified ke stage */
+
+/* git status */
+/* Untracked : File yang belum di copy ke stage*/
+/* Modified : File yang memiliki perbedaan versi pada area modified dan stage*/
+/* Working tree clean : versi pada modified dan stage itu sama*/
+
+/* git ls-files */
+/* Melihat list file yang berada di area stage */
+
+/* git rm --cached index.html */
+/* Menghapus file yang ada di stage */
+
+/* finish */
