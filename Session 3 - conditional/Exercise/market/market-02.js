@@ -23,7 +23,7 @@ var stockGrape = 7
 var stockOrange = 8
 
 // Meminta user input qty untuk setiap buahnya
-var qtyApple = parseInt(prompt(`Masukkan jumlah qty Apel`))
+var qtyApple = parseInt(prompt(`Masukkan jumlah qty Apel (stock : ${stockApple})`))
 // Jika qty apel yang diminta melebih stock apel yang ada
 if(qtyApple > stockApple){
     // Menampilkan informasi bahwa qty melebihi stock.
@@ -33,7 +33,7 @@ if(qtyApple > stockApple){
 }
 
 
-var qtyGrape = parseInt(prompt(`Masukkan jumlah qty Anggur`))
+var qtyGrape = parseInt(prompt(`Masukkan jumlah qty Anggur (stock : ${stockGrape})`))
 // Jika qty anggur yang diminta melebih stock anggur yang ada
 if(qtyGrape > stockGrape){
     // Menampilkan informasi bahwa qty melebihi stock.
@@ -42,7 +42,7 @@ if(qtyGrape > stockGrape){
     qtyGrape = stockGrape
 }
 
-var qtyOrange = parseInt(prompt(`Masukkan jumlah qty Jeruk`))
+var qtyOrange = parseInt(prompt(`Masukkan jumlah qty Jeruk (stock : ${stockOrange})`))
 // Jika qty jeruk yang diminta melebih stock jeruk yang ada
 if(qtyOrange > stockOrange){
     // Menampilkan informasi bahwa qty melebihi stock.

@@ -24,9 +24,6 @@
 // 4
 // console.log(score)
 
-
-var a = 28
-
 // Solve it 1
     a++ // 29
     a + 1
