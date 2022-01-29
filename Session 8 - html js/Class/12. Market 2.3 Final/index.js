@@ -2,16 +2,39 @@
 /* Init Value*/
 ///////////////
 let products = [
-  { id: 1579581080923,category: 'Fast Food' , name: "Noodle", price: 3500, stock : 9},
-  { id: 1579581081130,category: 'Electronic' , name: "Headphone", price: 430000, stock :8 },
-  { id: 1579581081342,category: 'Cloth' , name: "Hoodie", price: 30000, stock :7 },
-  { id: 1579581081577,category: 'Fruit' , name: "Apple", price: 10000, stock :8 }
+  {
+    id: 1579581080923,
+    category: "Fast Food",
+    name: "Noodle",
+    price: 3500,
+    stock: 9,
+  },
+  {
+    id: 1579581081130,
+    category: "Electronic",
+    name: "Headphone",
+    price: 430000,
+    stock: 8,
+  },
+  {
+    id: 1579581081342,
+    category: "Cloth",
+    name: "Hoodie",
+    price: 30000,
+    stock: 7,
+  },
+  {
+    id: 1579581081577,
+    category: "Fruit",
+    name: "Apple",
+    price: 10000,
+    stock: 8,
+  },
 ];
 
 const categories = ["All", "Fast Food", "Electronic", "Cloth", "Fruit"];
 
-let carts = []
-
+let carts = [];
 
 /////////////////
 /* Render List */
@@ -19,9 +42,9 @@ let carts = []
 const fnRenderList = (index) => {
   // mapping array of product
   const listProduct = products.map((product) => {
-    const {id, category, name, price, stock} = product
+    const { id, category, name, price, stock } = product;
 
-    if(id != index){
+    if (id != index) {
       return `
       <tr>
         <td>${id}</td>
@@ -33,7 +56,7 @@ const fnRenderList = (index) => {
         <td><input type="button" value="Add" onclick="fnAdd(${id})" ></td>
         <td><input type="button" value="Delete" onclick="fnDelete(${id})" ></td>
         <td><input type="button" value="Edit" onclick="fnEdit(${id})"></td>
-      </tr>`
+      </tr>`;
     }
 
     return `
@@ -46,90 +69,94 @@ const fnRenderList = (index) => {
         <td><input type="button" value="Add" disabled ></td>
         <td><input type="button" value="Save" onclick = "fnSave(${id})" ></td>
         <td><input type="button" value="Cancel" onclick="fnCancel()"></td>
-      </tr>`
-  })
+      </tr>`;
+  });
 
   // mapping array of category
   const listCategory = categories.map((category) => {
     // category = string like 'All', 'Fast Food', 'Electronic' ...
-    return `<option value="${category}">${category}</option>`
-  })
+    return `<option value="${category}">${category}</option>`;
+  });
 
   // data products
-  document.getElementById("render").innerHTML = listProduct.join("")
+  document.getElementById("render").innerHTML = listProduct.join("");
   // category
-  document.getElementById("catFilter").innerHTML = listCategory.join("")
-  document.getElementById("catInput").innerHTML = listCategory.join("")
-
-}
+  document.getElementById("catFilter").innerHTML = listCategory.join("");
+  document.getElementById("catInput").innerHTML = listCategory.join("");
+};
 
 /////////////
 /* ADD CART*/
 /////////////
 const fnAdd = (index) => {
-
   // Dapatkan object produk yang terpilih (di klik)
-  const selectedProduct = products.find((product) => { return product.id == index})
+  const selectedProduct = products.find((product) => {
+    return product.id == index;
+  });
 
   // Periksa stock pada produk terpilih, apakah sudah habis ? (mencapai 0)
-  if(selectedProduct.stock == 0){
-    alert('Stock sudah mencapai 0')
+  if (selectedProduct.stock == 0) {
+    alert("Stock sudah mencapai 0");
   } else {
-    const foundCart = carts.find((cart) => { return cart.id == index })
+    const foundCart = carts.find((cart) => {
+      return cart.id == index;
+    });
 
     // Jika produk tidak ditemukan di carts
-    if(!foundCart) {
-
+    if (!foundCart) {
       // selectedProduct = {id, category, name, price, stock, qty}
-      const {id, category, name, price} = selectedProduct
-      carts.push({id, category, name, price, qty : 1})
-
+      const { id, category, name, price } = selectedProduct;
+      carts.push({ id, category, name, price, qty: 1 });
     } else {
-      const idx = carts.findIndex((cart) => {return cart.id == index})
+      const idx = carts.findIndex((cart) => {
+        return cart.id == index;
+      });
 
-      carts[idx].qty ++
-
+      carts[idx].qty++;
     }
 
-    const idx = products.findIndex((product) => {return product.id == index})
-    products[idx].stock --
+    const idx = products.findIndex((product) => {
+      return product.id == index;
+    });
+    products[idx].stock--;
   }
 
-
-  fnRenderList()
-  fnRenderCart()
-}
+  fnRenderList();
+  fnRenderCart();
+};
 
 /////////////////
 /* DELETE CART */
 /////////////////
 const fnDeleteCart = (index) => {
-
   // Temukan index product pada array products
-  const idxProduct = products.findIndex((product) => {return product.id == index })
+  const idxProduct = products.findIndex((product) => {
+    return product.id == index;
+  });
 
   // Temukan index product pada array carts
-  const idxCart = carts.findIndex((cart) => {return cart.id == index })
+  const idxCart = carts.findIndex((cart) => {
+    return cart.id == index;
+  });
 
   // Menjumlahkan stock pada array products dengan qty pada array carts
-  products[idxProduct].stock += carts[idxCart].qty
+  products[idxProduct].stock += carts[idxCart].qty;
 
   // Menghapus data dari carts
   carts = carts.filter((cart) => {
+    return cart.id != index;
+  });
 
-    return cart.id != index
-  })
-
-  fnRenderList()
-  fnRenderCart()
-}
+  fnRenderList();
+  fnRenderCart();
+};
 
 /////////////////
 /* RENDER CARTS*/
 /////////////////
 const fnRenderCart = () => {
   const listCart = carts.map((cart) => {
-    const {id, category, name, price, qty} = cart
+    const { id, category, name, price, qty } = cart;
     return `
       <tr>
         <td>${id}</td>
@@ -139,56 +166,56 @@ const fnRenderCart = () => {
         <td>${qty}</td>
         <td><input type="button" value="Delete" onclick = "fnDeleteCart(${id})" ></td>
       </tr>
-    `
-  })
+    `;
+  });
 
-  document.getElementById("carts").innerHTML = listCart.join("")
-}
+  document.getElementById("carts").innerHTML = listCart.join("");
+};
 
 /////////////////////////
 /* CALCULATE ALL ITEMS */
 /////////////////////////
 const fnPayment = () => {
   const listPayment = carts.map((cart) => {
-    const {id, category, name, price, qty} = cart
+    const { id, category, name, price, qty } = cart;
 
-    return `<p> ${id} | ${category} | ${name} | ${price} x ${qty} = ${price * qty} </p>`
+    return `<p> ${id} | ${category} | ${name} | ${price} x ${qty} = ${
+      price * qty
+    } </p>`;
+  });
 
-  })
-
-  let subTotal = 0
+  let subTotal = 0;
   carts.forEach((cart) => {
-    const {price, qty} = cart
-    subTotal += (price * qty)
-  })
+    const { price, qty } = cart;
+    subTotal += price * qty;
+  });
 
-  const ppn = subTotal * 0.1
-  const finalTotal = subTotal + ppn
+  const ppn = subTotal * 0.1;
+  const finalTotal = subTotal + ppn;
 
-  const listDetail = listPayment.join("")
+  const listDetail = listPayment.join("");
   const listTotal = `
     <h3>Sub Total Rp.${subTotal.toLocaleString("id")}</h3>
     <h3>Ppn Rp.${ppn.toLocaleString("id")}</h3>
     <h3>Total Rp.${finalTotal.toLocaleString("id")}</h3>
-    `
+    `;
 
-  document.getElementById("payment").innerHTML = listDetail + listTotal
-}
-
+  document.getElementById("payment").innerHTML = listDetail + listTotal;
+};
 
 //////////
 /* EDIT */
 //////////
 const fnEdit = (index) => {
-  fnRenderList(index)
-}
+  fnRenderList(index);
+};
 
 ////////////
 /* CANCEL */
 ////////////
-const fnCancel = (index) => {
-  fnRenderList()
-}
+const fnCancel = () => {
+  fnRenderList();
+};
 
 //////////
 /* SAVE */
@@ -196,18 +223,20 @@ const fnCancel = (index) => {
 
 const fnSave = (index) => {
   // Get all new data from text box
-  const name = document.getElementById("nameEdit").value
-  const price = document.getElementById("priceEdit").value
-  const stock = document.getElementById("stockEdit").value
+  const name = document.getElementById("nameEdit").value;
+  const price = document.getElementById("priceEdit").value;
+  const stock = document.getElementById("stockEdit").value;
 
   // Found index
-  const found = products.findIndex((product) => {return product.id == index })
+  const found = products.findIndex((product) => {
+    return product.id == index;
+  });
 
   // Change data
-  products[found] = {...products[found], name, price , stock }
+  products[found] = { ...products[found], name, price, stock };
 
-  fnRenderList()
-}
+  fnRenderList();
+};
 
 ////////////
 /* DELETE */
@@ -216,20 +245,14 @@ const fnSave = (index) => {
 // [ {id: 01}, {id: 02}, {id: 03} ]
 // index : 02
 const fnDelete = (index) => {
-
   // [{id: 01}, {id: 03}]
   products = products.filter((product) => {
     // product : {id: 03}
-    return product.id != index
-  })
+    return product.id != index;
+  });
 
-  fnRenderList()
-}
-
-
-
-
-
+  fnRenderList();
+};
 
 //////////////////
 /* RENDER FILTER*/
@@ -237,7 +260,7 @@ const fnDelete = (index) => {
 const fnRenderFilter = (arr) => {
   // mapping array of product
   const listProduct = arr.map((product) => {
-    const {id, category, name, price, stock} = product
+    const { id, category, name, price, stock } = product;
     return `
       <tr>
         <td>${id}</td>
@@ -248,52 +271,52 @@ const fnRenderFilter = (arr) => {
         <td><input type="button" value="Add" onclick="fnAdd(${id})" ></td>
         <td><input type="button" value="Delete" onclick="fnDelete(${id})" ></td>
         <td><input type="button" value="Edit" onclick="fnEdit(${id})"></td>
-      </tr>`
-  })
+      </tr>`;
+  });
 
   // data products
-  document.getElementById("render").innerHTML = listProduct.join("")
-}
+  document.getElementById("render").innerHTML = listProduct.join("");
+};
 
 //////////////////
 /* RESET FILTER*/
 //////////////////
 const fnResetFilter = () => {
-  const inputTags = document.getElementsByName("txtFilter")
+  const inputTags = document.getElementsByName("txtFilter");
 
-  for(const input of inputTags){
-    input.value = ""
+  for (const input of inputTags) {
+    input.value = "";
   }
 
-  fnRenderList()
-}
+  fnRenderList();
+};
 
 ////////////////
 /* INPUT DATA */
 ////////////////
 const fnInputData = () => {
   // Get data from html
-  const name = document.getElementById("nameInput").value
-  const price = parseInt(document.getElementById("priceInput").value)
-  const category = document.getElementById("catInput").value
-  const stock = document.getElementById("stockInput").value
+  const name = document.getElementById("nameInput").value;
+  const price = parseInt(document.getElementById("priceInput").value);
+  const category = document.getElementById("catInput").value;
+  const stock = document.getElementById("stockInput").value;
 
   // create date object
-  const time = new Date()
-  const id = time.getTime()
+  const time = new Date();
+  const id = time.getTime();
 
   // Push new data
-  products.push({id, name, price, category, stock})
+  products.push({ id, name, price, category, stock });
 
   // Clean all text box
-  document.getElementById("nameInput").value = ""
-  document.getElementById("priceInput").value = ""
-  document.getElementById("stockInput").value = ""
+  document.getElementById("nameInput").value = "";
+  document.getElementById("priceInput").value = "";
+  document.getElementById("stockInput").value = "";
 
-  console.log(products)
+  console.log(products);
   // Show the list
-  fnRenderList()
-}
+  fnRenderList();
+};
 
 ////////////////
 /* FILTER NAME */
@@ -301,8 +324,7 @@ const fnInputData = () => {
 const fnFilterName = () => {
   // Get data from user
   // keyword = 'A'
-  const keyword = document.getElementById("nameFilter").value
-
+  const keyword = document.getElementById("nameFilter").value;
 
   // Filtering
   // [{name: "Headphone"}, {name: "Apple"} ]
@@ -311,59 +333,57 @@ const fnFilterName = () => {
     // Turn to lowercase
 
     // nameLow = 'apple'
-    const nameLow = product.name.toLowerCase()
+    const nameLow = product.name.toLowerCase();
 
     // keywordLow = 'a'
-    const keywordLow = keyword.toLowerCase()
+    const keywordLow = keyword.toLowerCase();
 
     // true
-    return nameLow.includes(keywordLow)
-  })
+    return nameLow.includes(keywordLow);
+  });
 
-  fnRenderFilter(filterResult)
-}
+  fnRenderFilter(filterResult);
+};
 
 //////////////////
 /* FILTER PRICE */
 //////////////////
 const fnFilterPrice = () => {
   // get min value
-  const min = document.getElementById("min").value
+  const min = document.getElementById("min").value;
   // get max value
-  const max = document.getElementById("max").value
+  const max = document.getElementById("max").value;
 
-  let filterResult = products
+  let filterResult = products;
 
   // all text boxes don't empty
-  if(!(min == "" || max == "")){
+  if (!(min == "" || max == "")) {
     filterResult = products.filter((product) => {
-      const {price} = product
-      return price >= min && price <= max
-    })
+      const { price } = product;
+      return price >= min && price <= max;
+    });
   }
 
-
-  fnRenderFilter(filterResult)
-
-}
+  fnRenderFilter(filterResult);
+};
 
 /////////////////////
 /* FILTER CATEGORY */
 /////////////////////
 const fnFilterCategory = () => {
-  const selectedCategory = document.getElementById("catFilter").value
+  const selectedCategory = document.getElementById("catFilter").value;
 
-  let filterResult = products
+  let filterResult = products;
 
-  if(selectedCategory != "All"){
+  if (selectedCategory != "All") {
     filterResult = products.filter((product) => {
-      return product.category == selectedCategory
-    })
+      return product.category == selectedCategory;
+    });
   }
 
-  fnRenderFilter(filterResult)
-}
+  fnRenderFilter(filterResult);
+};
 
-fnRenderList()
+fnRenderList();
 
-089603552585
+089603552585;
